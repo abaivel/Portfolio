@@ -1,0 +1,94 @@
+﻿@using MudBlazor
+@inherits LayoutComponentBase
+<MudThemeProvider />
+<MudLayout>
+    <MudAppBar Class="navbar" Elevation="0" Color="@(isHome?Color.Transparent:Color.Primary)">
+        @if (isMobile)
+        {
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" Edge="Edge.Start" OnClick="ToggleNavMenu" Color="Color.Secondary"></MudIconButton>
+            <MudSpacer />
+            <MudText Style="font-family:'Cascadia Code';font-size:20px" Color="Color.Secondary">Alexandra Baivel</MudText>
+        }
+        else
+        {
+            <MudText Style="font-family:'Cascadia Code';font-size:20px" Color="Color.Secondary">Alexandra Baivel</MudText>            
+            <MudSpacer />
+            <MudSpacer />
+            <MudSpacer />
+            <MudSpacer />
+            <MudSpacer />
+            <MudSpacer />
+            <MudSpacer />
+            <MudSpacer />
+            <MudLink Underline="Underline.None" OnClick='(()=>Navigate(""))'>
+                Home
+            </MudLink>
+            <MudSpacer />
+            <MudLink Underline="Underline.None" OnClick='(()=>Navigate("education"))'>
+                Education
+            </MudLink>
+            <MudSpacer />
+            <MudLink Underline="Underline.None" OnClick='(()=>Navigate("work"))'>
+                Work Experience
+            </MudLink>
+            <MudSpacer />
+            <MudLink Underline="Underline.None" OnClick='(()=>Navigate("projects"))'>
+                Projects
+            </MudLink>
+            <MudSpacer />
+            <MudLink Underline="Underline.None" OnClick='(()=>Navigate("contact"))'>
+                Contact
+            </MudLink>
+        }
+    </MudAppBar>
+    <NavMenu CollapseNavMenu="CollapseNavMenu" CollapseNavMenuChanged="CollapseChanged" />
+    <CascadingValue Value="this">
+        <MudMainContent>
+            @Body
+        </MudMainContent>
+    </CascadingValue>
+    <MudAppBar Bottom="true" Fixed="false" Color="Color.Primary" Elevation="0">
+        Footer
+    </MudAppBar>
+</MudLayout>
+@code{
+    [Inject] public IJSRuntime jSRuntime { get; set; } = default!;
+    [Inject] public NavigationManager navigationManager { get; set; }
+    public bool CollapseNavMenu { get; set; } = false;
+    public bool isMobile { get; set; }
+    public bool isHome { get; set; } = false;
+    public string url { get; set; } = "";
+    private void ToggleNavMenu()
+    {
+        CollapseNavMenu = !CollapseNavMenu;
+    }
+
+    public void CollapseChanged(bool collapse)
+    {
+        CollapseNavMenu = collapse;
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        await jSRuntime.InvokeVoidAsync("window.registerViewportChangeCallback", DotNetObjectReference.Create(this));
+        isMobile = await jSRuntime.InvokeAsync<bool>("isDevice","");
+        string u = navigationManager.Uri.Substring(navigationManager.BaseUri.Length);
+        isHome = (u.Count() == 0);
+    }
+    [JSInvokable]
+    public void OnResize(bool ismobile)
+    {
+        isMobile = ismobile;
+        StateHasChanged();
+    }
+    protected override void OnParametersSet()
+    {
+        Console.WriteLine(isHome);
+        StateHasChanged();
+    }
+    public void Navigate(string Url)
+    {
+        isHome = (Url.Count() == 0);
+        url = Url;
+        navigationManager.NavigateTo(Url);
+    }
+}

@@ -1,0 +1,29 @@
+﻿@using MudBlazor
+<MudDrawer Open="@CollapseNavMenu" OpenChanged="@((bool c)=>{CollapseNavMenuChanged.InvokeAsync(c);})" Elevation="1" Variant="@DrawerVariant.Temporary" OverlayAutoClose="true" Color="Color.Primary" >
+    <MudDrawerHeader>
+        <MudText Style="font-family:'Cascadia Code';font-size:20px; text-align:center">Alexandra Baivel</MudText>
+    </MudDrawerHeader>
+    <MudNavMenu>
+        <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home" IconColor="Color.Secondary"> 
+            Home
+        </MudNavLink>
+        <MudNavLink Href="education" Icon="@Icons.Material.Filled.School" IconColor="Color.Secondary">
+            Education
+        </MudNavLink>
+        <MudNavLink Href="work" Icon="@Icons.Material.Filled.Work" IconColor="Color.Secondary">
+            Work Experience
+        </MudNavLink>
+        <MudNavLink Href="projects" Icon="@Icons.Material.Filled.Computer" IconColor="Color.Secondary">
+            Projects
+        </MudNavLink>
+        <MudNavLink Href="contact" Icon="@Icons.Material.Filled.Email" IconColor="Color.Secondary">
+            Contact
+        </MudNavLink>
+    </MudNavMenu>
+</MudDrawer>
+
+@code {
+    [Parameter] public bool CollapseNavMenu { get; set; }
+    [Parameter] public EventCallback<bool> CollapseNavMenuChanged { get; set; }
+    
+}

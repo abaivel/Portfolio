@@ -1,0 +1,62 @@
+:root {
+    --mud-palette-primary: rgba(10, 0,104, 1) !important;
+    --mud-palette-primary-rgb: 10, 0, 104 !important;
+    --mud-palette-primary-text: rgba(255, 255, 255, 1) !important;
+    --mud-palette-secondary: rgba(255, 255, 255, 1) !important;
+    --mud-palette-secondary-rgb: 255, 255, 255 !important;
+    --mud-palette-action-default-hover: rgba(0, 0, 0, 0.2) !important;
+    --mud-palette-primary-darken: rgb(62, 44, 221) !important;
+    --mud-palette-primary-lighten: rgb(118, 106, 231) !important;
+    --mud-palette-primary-hover: rgba(89, 74, 226, 0.058823529411764705) !important;
+    --mud-palette-secondary-text: rgba(10, 0,104, 1) !important;
+    --mud-palette-secondary-darken: #c0b9ff !important;
+    --mud-palette-secondary-lighten: rgb(255, 255, 255) !important;
+    --mud-typography-default-family: 'Cascadia Code' !important;
+    --mud-typography-button-family: 'Cascadia Code' !important;
+    --mud-typography-h3-family: 'Cascadia Code' !important;
+    --mud-typography-body1-family: 'Cascadia Code' !important;
+}
+
+.mud-nav-link-text {
+    color: var(--mud-palette-primary-text) !important;
+    font-size: 17px;
+}
+
+.mud-drawer-content .mud-icon-root {
+    align-self: center;
+}
+
+.mud-drawer-content .mud-navmenu.mud-navmenu-default .mud-nav-link.active:not(.mud-nav-link-disabled) {
+    background-color: rgb(0 0 0 / 20%);
+}
+.navbar a {
+    color: white !important;
+}
+
+.navbar {
+    position:absolute !important;
+}
+
+
+@media (max-width: 640.98px) {
+    .navbar-mobile {
+        display: flex;
+        column-gap: 1rem;
+    }
+
+    .navbar-pc {
+        display: none;
+    }
+}
+
+@media (min-width: 641px) {
+    .navbar-pc {
+        display: flex;
+        column-gap: 1rem;
+    }
+
+    .navbar-mobile {
+        display: none;
+    }
+}
+

@@ -1,0 +1,63 @@
+﻿@page "/work"
+@using MudBlazor
+
+<PageTitle>Baivel - Work Experience</PageTitle>
+
+
+<div style="width:100%;height:100%" id="fond">
+	<div style="height:100%;margin-top:-64px;" id="home-background">
+		<div style="background-color: #717486bf;">
+		<MudItem Class="pl-20" Style="padding-top:100px;height:max-content;padding-bottom: 36px;">
+			<MudText Typo="Typo.h3" Style="font-family:'Cascadia Code'" Color="Color.Secondary" Align="Align.Center">Work Experience</MudText>
+		</MudItem>
+		<div style="background-color:white;margin-left:10px;margin-right:10px;border-radius:15px;padding:10px">
+			<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%;height: 60vh;" Spacing="5" Justify="Justify.SpaceEvenly">
+				<MudItem Style="width:40%;height: 60vh;display: flex;justify-content: center;flex-direction: column;" id="aboutme">
+					<MudItem Class="pb-5">
+						<MudText Typo="Typo.h4" Color="Color.Primary">Software Developer</MudText>
+						<MudText Typo="Typo.h6" Color="Color.Primary">2023-2026</MudText>
+						</MudItem>
+					<MudText Align="Align.Justify" Color="Color.Primary">
+						In the context of my study, I am in a program where I alternate between weeks of school and weeks of work.
+						So, half of the time, I work in a french printing and marketing company called Dupliprint, where I program marketing websites with a team of developpers.<br /><br />
+						I've been working on one specific project, a PWA (Progressive Web Application) to create digital business cards. 
+						The application I program allows the users to create digital business cards.
+						It is made for businnesses, the application allows them to control the digital cards of their employees.
+					</MudText>
+				</MudItem>
+				<MudItem Style="width:40%;height: 60vh;display: flex;justify-content: center;align-items: center;">
+					<MudImage Fluid="true" Src="images/dupliprint.jpg" Style="max-height: 60vh;" />
+				</MudItem>
+			</MudStack>
+
+			<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%;height: 60vh;" Spacing="5" Justify="Justify.SpaceEvenly">
+				<MudItem Style="width:40%;height: 60vh;display: flex;justify-content: center;align-items: center;">
+					<MudImage Fluid="true" Src="images/linkedcard4.png" Style="max-height: 60vh;" />
+				</MudItem>
+				<MudItem Style="width:40%;height: 60vh;display: flex;justify-content: center;flex-direction: column;" id="aboutme">
+					<MudText Align="Align.Justify" Color="Color.Primary">
+						@*The application I program allows the users to create digital business cards. 
+						It is made for businnesses, the application allows them to control the digital cards of their employees.<br /><br />*@
+						I've developped a few majors features in this application and I'm now able of doing it without help. I can to the frontend as well as the backend.<br /><br />
+						We program this application in C# by using Blazor and MudBlazor for the frontend and by using a ASP.NET API.
+						We also use the CQRS pattern for the backend and Entity FrameWork to deal with the database. To have a secure indentification of the users, we are using OpenIddict.
+					</MudText>
+				</MudItem>
+			</MudStack>
+			@*<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%;margin-top:20px;height: 60vh;" Spacing="5" Justify="Justify.SpaceEvenly">
+				<MudItem Style="width:40%;height: 60vh;display: flex;justify-content: center;flex-direction: column;" id="aboutme">
+					<MudText Align="Align.Justify" Color="Color.Primary">
+						We program this application in C# by using Blazor and MudBlazor for the frontend and by using a ASP.NET API.
+						We also use the CQRS pattern for the backend and Entity FrameWork to deal with the database. To have a secure indentification of the users, we are using OpenIddict.
+					</MudText>
+				</MudItem>
+				<MudItem Style="width:40%;height: 60vh;display: flex;justify-content: center;align-items: center;">
+					<MudImage Fluid="true" Src="images/programming.jpg" Style="max-height: 60vh;" />
+				</MudItem>
+			</MudStack>*@
+		</div>
+			<br />
+		</div>
+	</div>
+</div>
+
