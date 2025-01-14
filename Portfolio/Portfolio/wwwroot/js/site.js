@@ -23,7 +23,9 @@ function generateAnimationHome() {
 
 function generateAnimationAllScreen() {
     let height = window.screen.height;
+    let divMainContent = document.getElementById("maincontent");
     let div = document.getElementById("fond");
-    let h = div.clientHeight
+    div.style.height = divMainContent.clientHeight + "px";
+    let h = div.clientHeight;
     generateAnimation(h, false);
 }

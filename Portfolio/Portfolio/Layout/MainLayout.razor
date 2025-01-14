@@ -1,8 +1,8 @@
 ﻿@using MudBlazor
 @inherits LayoutComponentBase
 <MudThemeProvider />
-<MudLayout>
-    <MudAppBar Class="navbar" Elevation="0" Color="@(isHome?Color.Transparent:Color.Primary)">
+<MudLayout Style="display: flex;flex-direction: column;min-height: 100vh;">
+    <MudAppBar Class="navbar" Elevation="@(isHome?0:5)" Color="@(isHome?Color.Transparent:Color.Primary)">
         @if (isMobile)
         {
             <MudIconButton Icon="@Icons.Material.Filled.Menu" Edge="Edge.Start" OnClick="ToggleNavMenu" Color="Color.Secondary"></MudIconButton>
@@ -43,11 +43,11 @@
     </MudAppBar>
     <NavMenu CollapseNavMenu="CollapseNavMenu" CollapseNavMenuChanged="CollapseChanged" />
     <CascadingValue Value="this">
-        <MudMainContent>
+        <MudMainContent Style="flex: 1;" id="maincontent">
             @Body
         </MudMainContent>
     </CascadingValue>
-    <MudAppBar Bottom="true" Fixed="false" Color="Color.Primary" Elevation="0">
+    <MudAppBar Bottom="true" Fixed="false" Color="Color.Primary" Elevation="5">
         Footer
     </MudAppBar>
 </MudLayout>

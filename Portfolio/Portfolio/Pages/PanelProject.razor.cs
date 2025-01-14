@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Portfolio.Models;
 
 namespace Portfolio.Pages
 {
     public partial class PanelProject
     {
         [Parameter]
-        public string Title { get; set; }
+        public ProjectModel Project { get; set; }
     }
 }
