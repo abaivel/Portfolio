@@ -1,13 +1,63 @@
 ﻿@using MudBlazor
 @using System.Web
 @using System.Text.RegularExpressions
-<MudItem>
+<MudItem Style="width:100%;overflow-y: scroll;max-height: 80vh;">
 	<MudText Typo="Typo.h4">@Project.Name</MudText>
 	<MudText Typo="Typo.h5">@Project.Language</MudText>
 	<br />
+	<MudGrid Justify="Justify.Center" Spacing="0" Style="margin: 10px 0;">
+		<MudItem Style="width:30%;text-align: center;">
+			<MudIcon Icon="@Icons.Material.Filled.People"></MudIcon>
+			<MudText>@Project.NbPeople</MudText>
+		</MudItem>
+		<MudItem Style="width:30%;text-align: center;border-left: lightgrey 2px solid;">
+			<MudIcon Icon="@Icons.Material.Filled.CalendarToday"></MudIcon>
+			<MudText>@Project.Year</MudText>
+		</MudItem>
+		<MudItem Style="width:30%;text-align: center;border-left: lightgrey 2px solid;">
+			<MudIcon Icon="@Icons.Material.Filled.BusinessCenter"></MudIcon>
+			@if (Project.TypeProjectEnum == Enums.TypeProjectEnum.SCHOOL){
+				<MudText>School Project</MudText>
+			}
+			else if (Project.TypeProjectEnum == Enums.TypeProjectEnum.PERSO)
+			{
+				<MudText>Personnal Project</MudText>
+			}else{
+				<MudText>Professionnal Project</MudText>
+			}
+		</MudItem>
+	</MudGrid>
+	<br/>
 	<MudText Typo="Typo.h6">
-		@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Description), "\r?\n|\r", "<br />"))
+		@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Introduction), "\r?\n|\r", "<br />"))
 	</MudText>
+	@for (var i=0;i<Project.Paragraphes.Count;i++){
+		var index = i;
+		@if (index % 2 == 0)
+		{
+			<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%;margin-top:20px" Spacing="5" Justify="Justify.SpaceBetween">
+				<MudItem Style="width:48%;align-content: center;" id="aboutme">
+				<MudText Align="Align.Justify">
+					@(Project.Paragraphes[index])
+				</MudText>
+			</MudItem>
+			<MudItem Style="width:48%;align-content: center;">
+				<MudImage Fluid="true" Src="@(Project.Images[index])" />
+			</MudItem>
+		</MudStack>
+		}else{
+			<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%;margin-top:20px" Spacing="5" Justify="Justify.SpaceBetween">
+				<MudItem Style="width:48%;align-content: center;">
+					<MudImage Fluid="true" Src="@(Project.Images[index])" />
+				</MudItem>
+				<MudItem Style="width:48%;align-content: center;" id="aboutme">
+					<MudText Align="Align.Justify" Color="Color.Primary">
+						@(Project.Paragraphes[index])
+					</MudText>
+				</MudItem>
+			</MudStack>
+		}
+	}
 	<br />
 	<MudItem Style="gap: 10px;display: flex;">
 		@if (Project.GithubUrl!=null){

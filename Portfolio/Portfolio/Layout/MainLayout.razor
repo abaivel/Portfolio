@@ -74,6 +74,13 @@
         string u = navigationManager.Uri.Substring(navigationManager.BaseUri.Length);
         isHome = (u.Count() == 0);
     }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        string u = navigationManager.Uri.Substring(navigationManager.BaseUri.Length);
+        isHome = (u.Count() == 0);
+    }
+
     [JSInvokable]
     public void OnResize(bool ismobile)
     {

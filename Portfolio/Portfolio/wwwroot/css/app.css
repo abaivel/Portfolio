@@ -60,3 +60,7 @@
     }
 }
 
+
+.tabs-projects .mud-tabs-tabbar-inner {
+    height: 58vh;
+}
