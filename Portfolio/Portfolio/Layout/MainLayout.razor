@@ -47,9 +47,7 @@
             @Body
         </MudMainContent>
     </CascadingValue>
-    <MudAppBar Bottom="true" Fixed="false" Color="Color.Primary" Elevation="5">
-        Footer
-    </MudAppBar>
+    <Footer></Footer>
 </MudLayout>
 @code{
     [Inject] public IJSRuntime jSRuntime { get; set; } = default!;
@@ -89,7 +87,6 @@
     }
     protected override void OnParametersSet()
     {
-        Console.WriteLine(isHome);
         StateHasChanged();
     }
     public void Navigate(string Url)
