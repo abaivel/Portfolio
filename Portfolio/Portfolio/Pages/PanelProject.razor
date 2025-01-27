@@ -28,7 +28,7 @@
 		</MudItem>
 	</MudGrid>
 	<br/>
-	<MudText Typo="Typo.h6">
+	<MudText Typo="Typo.body1">
 		@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Introduction), "\r?\n|\r", "<br />"))
 	</MudText>
 	@for (var i=0;i<Project.Paragraphes.Count;i++){
@@ -37,7 +37,7 @@
 		{
 			<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%;margin-top:20px" Spacing="5" Justify="Justify.SpaceBetween">
 				<MudItem Style="width:48%;align-content: center;" id="aboutme">
-				<MudText Align="Align.Justify">
+					<MudText Align="Align.Justify" Typo="Typo.body1">
 					@(Project.Paragraphes[index])
 				</MudText>
 			</MudItem>
@@ -51,7 +51,7 @@
 					<MudImage Fluid="true" Src="@(Project.Images[index])" />
 				</MudItem>
 				<MudItem Style="width:48%;align-content: center;" id="aboutme">
-					<MudText Align="Align.Justify" Color="Color.Primary">
+					<MudText Align="Align.Justify" Typo="Typo.body1">
 						@(Project.Paragraphes[index])
 					</MudText>
 				</MudItem>

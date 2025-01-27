@@ -15,6 +15,7 @@
     --mud-typography-button-family: 'Cascadia Code' !important;
     --mud-typography-h3-family: 'Cascadia Code' !important;
     --mud-typography-body1-family: 'Cascadia Code' !important;
+    --mud-palette-text-primary: #000000 !important;
 }
 
 .mud-nav-link-text {
@@ -62,7 +63,7 @@
 
 
 .tabs-projects .mud-tabs-tabbar-inner {
-    height: 58vh;
+    height: 78vh;
 }
 
 
