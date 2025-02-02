@@ -28,7 +28,7 @@ namespace Portfolio.Pages
         {
             if (firstRender)
             {
-                await jSRuntime.InvokeVoidAsync("generateAnimationAllScreen", DotNetObjectReference.Create(this));
+                //await jSRuntime.InvokeVoidAsync("generateAnimationAllScreen", DotNetObjectReference.Create(this));
             }
         }
         private async Task ValidateCaptcha()

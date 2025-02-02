@@ -3,13 +3,12 @@
 @using System.ComponentModel.DataAnnotations
 
 <PageTitle>Baivel - Contact</PageTitle>
-<div style="width:100%;height:100%" id="fond">
-	<div style="height:100%;margin-top:-64px;" id="home-background">
-		<div style="background-color: #717486bf;height: 100%;">
-			<MudItem Style="padding-top:100px;height:max-content;padding-bottom: 36px;">
+<div style="width:100%;background-image:url('images/background_page.jpg');" id="fond">
+	<div style="background-color: #0a006899;height: 100%;">
+			<MudItem Style="padding-top:36px;height:max-content;padding-bottom: 36px;">
 				<MudText Typo="Typo.h3" Style="font-family:'Cascadia Code'" Color="Color.Secondary" Align="Align.Center">Contact</MudText>
 			</MudItem>
-			<div style="background-color:white;margin-left:20%;margin-right:20%;border-radius:15px;padding:10px">
+		<div class="white-frame" style="margin-left:20%;margin-right:20%;">
 				<MudForm @ref="form" @bind-IsValid="@success">
 					<MudTextField Variant="Variant.Outlined" @bind-Value="@Email" T="string" Label="Email" Required="true" RequiredError="Email is required!"
 								  Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})" />
@@ -22,6 +21,5 @@
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 			<br />
 		</div>
-	</div>
 </div>
 

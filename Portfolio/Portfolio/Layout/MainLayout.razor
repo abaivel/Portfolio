@@ -2,16 +2,13 @@
 @inherits LayoutComponentBase
 <MudThemeProvider />
 <MudLayout Style="display: flex;flex-direction: column;min-height: 100vh;">
-    <MudAppBar Class="navbar" Elevation="@(isHome?0:5)" Color="@(isHome?Color.Transparent:Color.Primary)">
-        @if (isMobile)
-        {
+    <MudAppBar Class="navbar header_mobile" Elevation="@(isHome?0:5)" Color="@(isHome?Color.Transparent:Color.Primary)">
             <MudIconButton Icon="@Icons.Material.Filled.Menu" Edge="Edge.Start" OnClick="ToggleNavMenu" Color="Color.Secondary"></MudIconButton>
             <MudSpacer />
             <MudText Style="font-family:'Cascadia Code';font-size:20px" Color="Color.Secondary">Alexandra Baivel</MudText>
-        }
-        else
-        {
-            <MudText Style="font-family:'Cascadia Code';font-size:20px" Color="Color.Secondary">Alexandra Baivel</MudText>            
+    </MudAppBar>
+    <MudAppBar Class="navbar header_computer" Elevation="@(isHome?0:5)" Color="@(isHome?Color.Transparent:Color.Primary)">
+            <MudLink Style="font-family:'Cascadia Code';font-size:20px" Color="Color.Secondary" OnClick='(()=>Navigate(""))'>Alexandra Baivel</MudLink>
             <MudSpacer />
             <MudSpacer />
             <MudSpacer />
@@ -39,7 +36,6 @@
             <MudLink Underline="Underline.None" OnClick='(()=>Navigate("contact"))'>
                 Contact
             </MudLink>
-        }
     </MudAppBar>
     <NavMenu CollapseNavMenu="CollapseNavMenu" CollapseNavMenuChanged="CollapseChanged" />
     <CascadingValue Value="this">
@@ -67,8 +63,8 @@
     }
     protected override async Task OnInitializedAsync()
     {
-        await jSRuntime.InvokeVoidAsync("window.registerViewportChangeCallback", DotNetObjectReference.Create(this));
-        isMobile = await jSRuntime.InvokeAsync<bool>("isDevice","");
+        //await jSRuntime.InvokeVoidAsync("window.registerViewportChangeCallback", DotNetObjectReference.Create(this));
+        //isMobile = await jSRuntime.InvokeAsync<bool>("isDevice","");
         string u = navigationManager.Uri.Substring(navigationManager.BaseUri.Length);
         isHome = (u.Count() == 0 || u.Equals("index.html"));
     }
@@ -79,12 +75,12 @@
         isHome = (u.Count() == 0 || u.Equals("index.html"));
     }
 
-    [JSInvokable]
+    /*[JSInvokable]
     public void OnResize(bool ismobile)
     {
         isMobile = ismobile;
         StateHasChanged();
-    }
+    }*/
     protected override void OnParametersSet()
     {
         StateHasChanged();

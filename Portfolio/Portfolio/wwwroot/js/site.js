@@ -1,23 +1,33 @@
-﻿function generateAnimation(height, mousecontrol) {
-    let width = document.body.clientWidth;
-    document.getElementById("home-background").style.height = height + "px"
-    VANTA.NET({
-        el: "#home-background",
-        mouseControls: mousecontrol,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: height,
-        minWidth: 200.00,
-        scale: 0.70,
-        scaleMobile: 1.00,
-        color: 0xffffff,
-        backgroundColor: 0x0a0068,
-        points: 13.00
-    })
+﻿
+function isDevice() {
+	let width = document.body.clientWidth;
+	return width < 900;
+}
+
+
+function generateAnimation(height, mousecontrol) {
+	try {
+		document.getElementById("home-background").style.height = height + "px"
+		VANTA.NET({
+			el: "#home-background",
+			mouseControls: mousecontrol,
+			touchControls: true,
+			gyroControls: false,
+			minHeight: height,
+			minWidth: 200.00,
+			scale: 0.70,
+			scaleMobile: 1.00,
+			color: 0xffffff,
+			backgroundColor: 0x0a0068,
+			points: 13.00
+		})
+	} catch (e) {
+		location.reload();
+	}
 }
 
 function generateAnimationHome() {
-    let height = window.screen.height;
+	let height = document.body.clientHeight;
     generateAnimation(height, true);
 }
 
@@ -33,13 +43,13 @@ const resizeObserver = new ResizeObserver((entries) => {
 });
 
 function generateAnimationAllScreen() {
-    let height = window.screen.height;
+	let height = document.body.clientHeight;
 	let divMainContent = document.getElementById("maincontent");
 	//resizeObserver.observe(document.getElementById("cadre"));*/
     let div = document.getElementById("fond");
     div.style.height = divMainContent.clientHeight + "px";
     let h = div.clientHeight;
-    generateAnimation(h, false);
+    //generateAnimation(h, false);
 }
 
 function regenerateAnimationAllScreen(height) {

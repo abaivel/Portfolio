@@ -14,8 +14,117 @@
     --mud-typography-default-family: 'Cascadia Code' !important;
     --mud-typography-button-family: 'Cascadia Code' !important;
     --mud-typography-h3-family: 'Cascadia Code' !important;
+    --mud-typography-h4-family: 'Cascadia Code' !important;
+    --mud-typography-h5-family: 'Cascadia Code' !important;
     --mud-typography-body1-family: 'Cascadia Code' !important;
     --mud-palette-text-primary: #000000 !important;
+}
+
+.white-frame {
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+}
+
+@media (min-width: 901px) {
+    .white-frame {
+        padding: 50px 10px;
+    }
+    .header_mobile {
+        display: none !important;
+    }
+
+    .title-home-page {
+        padding-left: 80px !important;
+    }
+    .about-me-part {
+        flex-direction: row !important;
+        gap: 20px !important;
+    }
+    #aboutme-image{
+        width:35%;
+    }
+    #aboutme {
+        width: 60%;
+        padding-right: 5%;
+    }
+    .div-text-left-image-right {
+        width: 100%;
+        margin-top: 20px;
+        gap: 20px;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    }
+
+    .div-text-right-image-left {
+        width: 100%;
+        margin-top: 20px;
+        gap: 20px;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    }
+    .div-text, .div-image {
+        width: 40%;
+        align-content: center;
+    }
+    .tabs-projects {
+        height: 78vh;
+    }
+    .tabs-projects .mud-tabs-tabbar-inner {
+        height: 78vh;
+    }
+}
+
+@media (max-width: 900px) {
+    .white-frame {
+        padding: 20px;
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+    .header_computer {
+        display: none !important;
+    }
+    :root {
+        --mud-typography-h1-size: 4rem !important;
+        --mud-typography-h3-size: 2rem !important;
+        --mud-typography-h4-size: 1.5rem !important;
+    }
+    .about-me-part {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 0 !important;
+    }
+    #aboutme {
+        margin: 0 50px;
+    }
+    .div-text-left-image-right {
+        width: 100%;
+        gap: 20px;
+        flex-direction: column !important;
+    }
+
+    .div-text-right-image-left {
+        width: 100%;
+        gap: 20px;
+        flex-direction: column-reverse !important;
+    }
+    .div-text, .div-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 500px) {
+    .title-home-page {
+        padding-left: 50px !important;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .title-home-page {
+        padding-left: 20px !important;
+    }
 }
 
 .mud-nav-link-text {
@@ -30,12 +139,13 @@
 .mud-drawer-content .mud-navmenu.mud-navmenu-default .mud-nav-link.active:not(.mud-nav-link-disabled) {
     background-color: rgb(0 0 0 / 20%);
 }
+
 .navbar a {
     color: white !important;
 }
 
 .navbar {
-    position:absolute !important;
+    position: absolute !important;
 }
 
 
@@ -62,11 +172,6 @@
 }
 
 
-.tabs-projects .mud-tabs-tabbar-inner {
-    height: 78vh;
-}
-
-
 
 
 
@@ -85,6 +190,7 @@
     grid-template-columns: repeat(50, 2%);
     grid-template-rows: repeat(18,15px);
     align-items: center;
+    font-family: var(--mud-typography-default-family);
 }
 
 .logo-footer-circle {
@@ -96,27 +202,9 @@
     display: none;
 }
 
-.footer-copyright {
-    grid-column: 2 / 50;
-    grid-row: 18 / 21;
-    border-top: #496A2D solid 3px;
-    padding-top: 10px;
-    color: #496A2D;
-    font-family: Paytone One;
-    text-align: start;
-}
-
 .footer-text-under-logo {
     grid-column: 4 / 20;
     grid-row: 8 / 8;
-}
-
-.slogan-footer {
-    font-family: Pacifico;
-    color: #496A2D;
-    font-size: 2.7vh;
-    margin-bottom: 1%;
-    text-align: start;
 }
 
 .contact-button-footer {
@@ -175,21 +263,22 @@
         height: 2.2em;
     }
 
-@media only screen and (max-width: 750px) and (orientation:portrait) { /*phone portrait mode*/
+@media (max-width: 900px) {
     .footer {
-        display: block;
+        display: block !important;
         height: auto;
     }
 
-    .logo-footer-circle {
-        display: none;
+    .logo-footer-circle, .footer-text-under-logo {
+        text-align: center !important;
     }
 
-    .logo-footer-text {
-        display: block;
-        width: 90%;
-        margin: auto;
-        padding-top: 15px;
+    .logo-footer-circle {
+        margin-top: 20px !important;
+        font-size: 2rem !important;
+    }
+    .footer-text-under-logo{
+        margin-bottom: 10px !important;
     }
 
     .links-pages-footer {
@@ -214,7 +303,7 @@
     }
 
     .contact-button-footer {
-        display: none;
+        display: none !important;
     }
 
     .links-pages-footer a {
@@ -252,7 +341,7 @@
     }
 }
 
-@media only screen and (max-height: 750px) and (max-width: 960px) and (orientation:landscape) { /*phone landscape mode*/
+/*@media only screen and (max-height: 750px) and (max-width: 960px) and (orientation:landscape) {
     .footer {
         grid-template-rows: repeat(20,12px);
     }
@@ -279,7 +368,7 @@
     }
 }
 
-@media only screen and (min-width: 750px) and (orientation: portrait) { /*tablet portrait mode*/
+@media only screen and (min-width: 750px) and (orientation: portrait) {
     .footer {
         grid-template-rows: repeat(20,15px);
     }
@@ -307,4 +396,4 @@
     .social-medias-footer img {
         height: 2em;
     }
-}
+}*/

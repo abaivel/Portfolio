@@ -2,47 +2,45 @@
 @using MudBlazor
 <PageTitle>Baivel - Education</PageTitle>
 
-<div style="width:100%;height:100%" id="fond">
-	<div style="height:100%;margin-top:-64px;" id="home-background">
-		<div style="background-color: #717486bf;">
-			<MudItem Style="padding-top:100px;height:max-content;padding-bottom: 36px;">
+<div style="width:100%;background-image:url('images/background_page.jpg');" id="fond">
+	<div style="background-color: #0a006899;height: 100%;">
+			<MudItem Style="padding-top:36px;height:max-content;padding-bottom: 36px;">
 				<MudText Typo="Typo.h3" Style="font-family:'Cascadia Code'" Color="Color.Secondary" Align="Align.Center">Education</MudText>
 			</MudItem>
-			<div style="background-color:white;margin-left:10px;margin-right:10px;border-radius:15px;padding:10px" id="cadre">
-				<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%;margin-top:20px;height: 60vh;" Spacing="5" Justify="Justify.SpaceEvenly">
-					<MudItem Style="width:40%;align-content: center;" id="aboutme">
+			<div class="white-frame">
+			<MudItem Class="div-text-left-image-right d-flex justify-space-evenly">
+					<MudItem Class="div-text">
 						<MudItem Class="pb-5">
 							<MudText Typo="Typo.h4" Color="Color.Primary">Master Degree In Computer Science</MudText>
 							<MudText Typo="Typo.h6" Color="Color.Primary">2021-2026</MudText>
 							</MudItem>
 						<MudText Align="Align.Justify" Color="Color.Primary">
 							I'v been studying for 3 years and a half at the french engineering school, CY Tech, to get a engineering degree, the equivalent of a master degree. 
-							In this school, I've studied C, SQL, Java even a little bit of Python. 
+							In this school, I've studied C, SQL, Java including JEE even a little bit of Python. 
 							I also learned the basics of Linux, of network architecture and of code testing. <br />
-							During my classes, I did a few projects that you can find here :
+							During my classes, I did a few projects that you can find here:
 						</MudText>
 						<MudButton Color="Color.Secondary" Variant="Variant.Filled" Style="font-size:15px;margin-top:15px" Href="/projects">My projects</MudButton>
 					</MudItem>
-					<MudItem Style="width:40%;align-content: center;">
+				<MudItem Class="div-image">
 						<MudImage Fluid="true" Src="images/campuscytechcergy.jpg" />
 					</MudItem>
-				</MudStack>
-
-				<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%;margin-top:20px;height: 60vh;" Spacing="5" Justify="Justify.SpaceEvenly">
-					<MudItem Style="width:40%;padding-right:50px;align-content: center;">
+				</MudItem>
+			<br />
+			<MudItem Class="div-text-right-image-left d-flex justify-space-evenly">
+					<MudItem Class="div-image">
 						<MudImage Fluid="true" Src="images/pexels-divinetechygirl-1181675.jpg" />
 					</MudItem>
-					<MudItem Style="width:40%;align-content: center;" id="aboutme">
+				<MudItem Class="div-text">
 						<MudText Align="Align.Justify" Color="Color.Primary">
 							In the context of my study, I am in a program where I alternate between weeks of school and weeks of work. I've been in this program for a year and a half. 
 							<br />
-							I'm working as a software developer half of the time and you can find details about my work here :
+							I'm working as a software developer half of the time, you can find details about my work here:
 						</MudText>
 						<MudButton Color="Color.Secondary" Variant="Variant.Filled" Style="font-size:15px;margin-top:15px" Href="/work">My work</MudButton>
 					</MudItem>
-				</MudStack>
+				</MudItem>
 			</div>
 			<br />
 		</div>
-	</div>
 </div>

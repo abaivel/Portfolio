@@ -5,7 +5,7 @@
 <PageTitle>Baivel - Home</PageTitle>
 
 <div style="height:100%;margin-top:-64px;" id="home-background">
-	<MudItem Class="pl-20" Style="padding-top:100px;height:max-content">
+	<MudItem Class="title-home-page" Style="padding-top:100px;height:max-content">
 		<MudText Typo="Typo.h1" Style="font-family:'Cascadia Code';border:none !important;box-shadow: none !important;outline: none !important;" Color="Color.Secondary"> Alexandra<br />Baivel</MudText>
 		<MudText Typo="Typo.h3" Style="font-family:'Cascadia Code'" Color="Color.Secondary"> Software Developer</MudText>
 		<MudItem Style="margin-top:15px">
@@ -16,25 +16,27 @@
 		</MudItem>
 	</MudItem>
 </div>
-<MudItem Class="pt-10">
-	<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%" Spacing="5" Justify="Justify.SpaceEvenly">
-		<MudItem Style="width:45%;padding-left:50px;" id="aboutme">
-			<MudText Class="pb-5" Typo="Typo.h3" Color="Color.Primary">About me</MudText>
+<MudItem Class="">
+	<MudItem Class="about-me-part d-flex justify-space-between flex-wrap" Style="width:100%">
+		<MudItem id="aboutme-image" Style="align-content: center;">
+			<MudImage  Fluid="true" Src="images/CodePeople.jpeg" ObjectFit="ObjectFit.Cover" Style="height:100%" Alt="Picture of a girl programming (not me)"/>
+		</MudItem>
+		<MudItem Style="align-content: center;" id="aboutme">
+			<MudText Class="pb-5 pt-5" Typo="Typo.h3" Color="Color.Primary">About me</MudText>
 			<MudText Align="Align.Justify" Color="Color.Primary">
-				I'm Alexandra Baivel, a 20-year-old French student. 
-				I'm studying computer science in the french engineering school CY Tech and I'm searching for a internship abroad. 
+				I'm Alexandra Baivel, a @(Age)-year-old French student. 
+				I'm studying computer science in the french engineering school CY Tech and I'm searching for a internship abroad. Indeed, to become an engineer in France, you need to spend at least 2 months abroad for an internship or in an university.
+				<br /><br />
 				Since I did my first program in Python 6 years ago, I've learned multiple programming languages like Java (Android and Jakarta EE), Kotlin, C, C#, HTML, CSS, Javascript, PHP.
-				I've also worked with multiples frameworks like React, Django, Blazor, ASP .NET and Entity Framework.
+				I've also worked with multiples frameworks like React, Django, Blazor, ASP.NET Core and Entity Framework.
 
 				You can learn more about my projects and my work here :
 			</MudText>
-			<MudButton Color="Color.Primary" Variant="Variant.Filled" Style="font-size:15px;margin-top:15px" Href="/projects">My projects</MudButton>
-			<MudButton Color="Color.Primary" Variant="Variant.Filled" Style="font-size:15px;margin-top:15px" Href="/work">My work</MudButton>
+			<MudButton Color="Color.Primary" Variant="Variant.Filled" Style="font-size:15px;margin-top:15px;margin-bottom: 15px;" Href="/projects">My projects</MudButton>
+			<MudButton Color="Color.Primary" Variant="Variant.Filled" Style="font-size:15px;margin-top:15px;margin-bottom: 15px;" Href="/work">My work</MudButton>
+			<br/>
 		</MudItem>
-		<MudItem Style="width:45%;padding-right:50px;">
-			<MudImage Fluid="true" Src="images/data-5606639_1280.jpg" />
-		</MudItem>
-	</MudStack>
+	</MudItem>
 </MudItem>
 
 @*<MudImage Style="width:100%" Src="images/image_home.jpg"/>*@
