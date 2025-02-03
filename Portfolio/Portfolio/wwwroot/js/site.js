@@ -1,4 +1,9 @@
-﻿
+﻿window.registerViewportChangeCallback = (dotnetHelper) => {
+	window.addEventListener('resize', () => {
+		//dotnetHelper.invokeMethodAsync('OnResize', isDevice());
+		generateAnimationHome();
+	});
+}
 function isDevice() {
 	let width = document.body.clientWidth;
 	return width < 900;
@@ -7,20 +12,27 @@ function isDevice() {
 
 function generateAnimation(height, mousecontrol) {
 	try {
-		document.getElementById("home-background").style.height = height + "px"
-		VANTA.NET({
-			el: "#home-background",
-			mouseControls: mousecontrol,
-			touchControls: true,
-			gyroControls: false,
-			minHeight: height,
-			minWidth: 200.00,
-			scale: 0.70,
-			scaleMobile: 1.00,
-			color: 0xffffff,
-			backgroundColor: 0x0a0068,
-			points: 13.00
-		})
+		var home = document.getElementById("home-background");
+		if (home != null) {
+			home.style.height = height + "px";
+			var canvas = document.getElementsByClassName("vanta-canvas");
+			if (canvas.length > 0) {
+				canvas[0].remove();
+			}
+			VANTA.NET({
+				el: "#home-background",
+				mouseControls: mousecontrol,
+				touchControls: true,
+				gyroControls: false,
+				minHeight: height,
+				minWidth: 200.00,
+				scale: 0.70,
+				scaleMobile: 1.00,
+				color: 0xffffff,
+				backgroundColor: 0x0a0068,
+				points: 13.00
+			})
+		}
 	} catch (e) {
 		location.reload();
 	}

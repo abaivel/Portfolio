@@ -22,6 +22,7 @@ namespace Portfolio.Pages
             if (firstRender)
             {
                 await jSRuntime.InvokeVoidAsync("generateAnimationHome", DotNetObjectReference.Create(this));
+                await jSRuntime.InvokeVoidAsync("window.registerViewportChangeCallback", DotNetObjectReference.Create(this));
             }
         }
     }
