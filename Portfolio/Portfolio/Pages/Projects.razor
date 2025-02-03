@@ -2,6 +2,7 @@
 @using MudBlazor
 @using Portfolio.Models
 @using Portfolio.Services
+@inject IDialogService DialogService
 
 <PageTitle>Baivel - Projects</PageTitle>
 
@@ -11,39 +12,29 @@
                 <MudText Typo="Typo.h3" Style="font-family:'Cascadia Code'" Color="Color.Secondary" Align="Align.Center">Projects</MudText>
             </MudItem>
 		<div class="white-frame" style="padding:10px;">
-                <MudTabs Outlined="true" Position="@Position" Rounded="true" Border="true"
-						 ApplyEffectsToContainer="true" PanelClass="pa-6" Class="tabs-projects" Style="height: 78vh;">
-					@foreach (var t in ListProjects){
-						<MudTabPanel Text="@(t.Name+" - "+t.Language)">
-							<PanelProject Project="@t"></PanelProject>
-						</MudTabPanel>
+			<MudItem Style="margin-bottom: 20px;">
+				<MudTextField Immediate="true" Value="@ValueSearched" ValueChanged="@((string v) => ValueSearchedChanged(v))" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" Label="Enter a project name or a programming language" Variant="Variant.Outlined" Style="width:30%"></MudTextField>
+			</MudItem>
+			<MudStack Row="true" Justify="Justify.SpaceBetween" Wrap="Wrap.Wrap">
+					@foreach (var t in ListProjectsSearched){
+						<MudItem onclick="@(()=>OpenProject(t))">
+						<ProjectContainer Project="t"></ProjectContainer>
+						</MudItem>
 					}
-					@*<MudTabPanel Text="Portfolio">
-						<PanelProject Title="Portfolio"></PanelProject>
-					</MudTabPanel>
-					<MudTabPanel Text="4X Game - JEE">
-						<PanelProject Title="4X Game - JEE"></PanelProject>
-					</MudTabPanel>
-					<MudTabPanel Text="HedgeShop - React.js & Django">
-						<PanelProject Title="HedgeShop - React.js & Django"></PanelProject>
-					</MudTabPanel>
-					<MudTabPanel Text="LBA Proprete Website - HTML, CSS & PHP">
-						<PanelProject Title="LBA Proprete Website - HTML, CSS & PHP"></PanelProject>
-					</MudTabPanel>
-					<MudTabPanel Text="LBA Proprete Android Application - Java & Kotlin">
-						<PanelProject Title="LBA Proprete Android Application - Java & Kotlin"></PanelProject>
-					</MudTabPanel>
-					<MudTabPanel Text="Jeunes 6.4 - HTML, CSS & PHP">
-						<PanelProject Title="Jeunes 6.4 - HTML, CSS & PHP"></PanelProject>
-					</MudTabPanel>
-					<MudTabPanel Text="Level 1 - Java & javafx">
-						<PanelProject Title="Level 1 - Java & javafx"></PanelProject>
-					</MudTabPanel>*@
-
-				</MudTabs>
+			</MudStack>
 			</div>
 			<br />
+		@*<MudOverlay Style="height:100vh;width:100vh" @bind-Visible="@projectOpen" DarkBackground AutoClose="true" OnClosed="CloseProject">
+			<PanelProject Project="@ProjectSelected"></PanelProject>
+		</MudOverlay>*@
 		</div>
 </div>
+
+<MudDialog @bind-Visible="@projectOpen" Options="new() {CloseButton = true, MaxWidth = MaxWidth.Large }">
+	<DialogContent>
+		<PanelProject Project="@ProjectSelected"></PanelProject>
+	</DialogContent>
+</MudDialog>
+
 
 

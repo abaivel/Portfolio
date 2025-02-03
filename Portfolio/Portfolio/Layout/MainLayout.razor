@@ -1,6 +1,13 @@
 ﻿@using MudBlazor
 @inherits LayoutComponentBase
 <MudThemeProvider />
+<MudPopoverProvider />
+
+@* Needed for dialogs *@
+<MudDialogProvider />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider />
 <MudLayout Style="display: flex;flex-direction: column;min-height: 100vh;">
     <MudAppBar Class="navbar header_mobile" Elevation="@(isHome?0:5)" Color="@(isHome?Color.Transparent:Color.Primary)">
             <MudIconButton Icon="@Icons.Material.Filled.Menu" Edge="Edge.Start" OnClick="ToggleNavMenu" Color="Color.Secondary"></MudIconButton>

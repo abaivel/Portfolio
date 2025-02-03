@@ -1,0 +1,49 @@
+﻿@page "/projects2"
+@using MudBlazor
+@using Portfolio.Models
+@using Portfolio.Services
+
+<PageTitle>Baivel - Projects</PageTitle>
+
+<div style="width:100%;background-image:url('images/background_page.jpg');" id="fond">
+	<div style="background-color: #0a006899;height: 100%;">
+            <MudItem Style="padding-top:36px;padding-bottom: 36px;">
+                <MudText Typo="Typo.h3" Style="font-family:'Cascadia Code'" Color="Color.Secondary" Align="Align.Center">Projects</MudText>
+            </MudItem>
+		<div class="white-frame" style="padding:10px;">
+                <MudTabs Outlined="true" Position="@Position" Rounded="true" Border="true"
+						 ApplyEffectsToContainer="true" PanelClass="pa-6" Class="tabs-projects" Style="height: 78vh;">
+					@foreach (var t in ListProjects){
+						<MudTabPanel Text="@(t.Name+" - "+t.Language)">
+							<PanelProject Project="@t"></PanelProject>
+						</MudTabPanel>
+					}
+					@*<MudTabPanel Text="Portfolio">
+						<PanelProject Title="Portfolio"></PanelProject>
+					</MudTabPanel>
+					<MudTabPanel Text="4X Game - JEE">
+						<PanelProject Title="4X Game - JEE"></PanelProject>
+					</MudTabPanel>
+					<MudTabPanel Text="HedgeShop - React.js & Django">
+						<PanelProject Title="HedgeShop - React.js & Django"></PanelProject>
+					</MudTabPanel>
+					<MudTabPanel Text="LBA Proprete Website - HTML, CSS & PHP">
+						<PanelProject Title="LBA Proprete Website - HTML, CSS & PHP"></PanelProject>
+					</MudTabPanel>
+					<MudTabPanel Text="LBA Proprete Android Application - Java & Kotlin">
+						<PanelProject Title="LBA Proprete Android Application - Java & Kotlin"></PanelProject>
+					</MudTabPanel>
+					<MudTabPanel Text="Jeunes 6.4 - HTML, CSS & PHP">
+						<PanelProject Title="Jeunes 6.4 - HTML, CSS & PHP"></PanelProject>
+					</MudTabPanel>
+					<MudTabPanel Text="Level 1 - Java & javafx">
+						<PanelProject Title="Level 1 - Java & javafx"></PanelProject>
+					</MudTabPanel>*@
+
+				</MudTabs>
+			</div>
+			<br />
+		</div>
+</div>
+
+

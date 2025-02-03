@@ -7,23 +7,19 @@ using Portfolio.Services;
 
 namespace Portfolio.Pages
 {
-    public partial class Projects
+    public partial class Projects2
     {
         [Inject] public IJSRuntime jSRuntime { get; set; } = default!;
         [CascadingParameter]
         public MainLayout Layout { get; set; }
 
         public List<ProjectModel> ListProjects { get; set; }
-        public List<ProjectModel> ListProjectsSearched { get; set; }
-        public ProjectModel? ProjectSelected { get; set; }
-        public bool projectOpen = false;
+
         public Position Position { get; set; }
-        public string? ValueSearched = null;
         protected override async Task OnInitializedAsync()
         {
             Layout.isHome = true;
             ListProjects  = ProjectService.getProjects();
-            ListProjectsSearched = ListProjects.ToList();
             var res = await jSRuntime.InvokeAsync<bool>("isDevice", "");
             if (res)
             {
@@ -41,25 +37,6 @@ namespace Portfolio.Pages
             {
                 //await jSRuntime.InvokeVoidAsync("generateAnimationAllScreen", DotNetObjectReference.Create(this));
             }
-        }
-
-        public void ValueSearchedChanged(string value)
-        {
-            ListProjectsSearched = ListProjects.Where(x => x.Name.Contains(value) ||x.Language.Contains(value)).ToList();
-            ValueSearched = value;
-        }
-
-        public void OpenProject(ProjectModel p)
-        {
-            ProjectSelected = p;
-            projectOpen = true;
-            StateHasChanged();
-        }
-
-        public void CloseProject()
-        {
-            ProjectSelected = null;
-            projectOpen = false;
         }
     }
 }

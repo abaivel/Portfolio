@@ -1,4 +1,5 @@
-﻿using Portfolio.Models;
+﻿using Portfolio.Enums;
+using Portfolio.Models;
 using Portfolio.Pages;
 
 namespace Portfolio.Services
@@ -11,13 +12,13 @@ namespace Portfolio.Services
             #region Portfolio
             Projects.Add(new ProjectModel("Portfolio", "My most recent project is this portfolio.\n\n" +
                 "It's made with the framework Blazor, a ASP.NET Core framework. That framework allows to integrate C# in HTML files. I also use the library MudBlazor which propose ready-to-use components.", 
-                "Blazor", null, "https://github.com/abaivel/Portfolio", 1, 2025, Enums.TypeProjectEnum.PERSO));
+                "Blazor", null, "https://github.com/abaivel/Portfolio", 1, 2025, TypeProjectEnum.PERSO, TypeSoftwareEnum.WEBSITE));
             #endregion
 
             #region 4XGame
             ProjectModel p4XGame = new ProjectModel("4X Game", "This project is a 4X Game, which is a strategy game in which the users' actions can be summarize by the '4X', eXploration, eXpansion, eXploitation et eXtermination." +
                 "The purpose of this project was te program a simple game using JEE, with servlets, JSPs and JPA and by respecting a MVC architecture.",
-                "Java, JEE, JPA, Servlet, JSP", null, "https://github.com/abaivel/Projet_JEE", 4, 2025, Enums.TypeProjectEnum.SCHOOL);
+                "Java, JEE, JPA, Servlet, JSP", null, "https://github.com/abaivel/Projet_JEE", 4, 2025, TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
 
             p4XGame.Paragraphes.Add("The website opens on a connexion page on which the user can enter their login and their password. The logins and passwords are saved in a database. " +
                 "The user can access the game either by entering a unused login or by entering the right login and password." +
@@ -47,7 +48,7 @@ namespace Portfolio.Services
 
             #region Hedgeshop
             ProjectModel pHedgeShop = new ProjectModel("HedgeShop", "This project is a sales website. We had to choose the objects to sell and one of my teammate adores hedgehog so we did a website to sell objects for hedgehogs.\n\n",
-                "React.js, Django", null, "https://github.com/UnderSkyle/ProjetWebING1", 3, 2024, Enums.TypeProjectEnum.SCHOOL);
+                "React.js, Django", null, "https://github.com/UnderSkyle/ProjetWebING1", 3, 2024, TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
 
             pHedgeShop.Paragraphes.Add("The website opens on a home page presenting the website. The website has the typical page of a e-commerce website. " +
                 "There are 3 kinds of product, \"Nourriture\" (\"Food\"), \"Cabane\" (\"Shed\"), \"Jouets\" (\"Toys\"). We also had to add a strange contact page. Those pages are also accessible from the footer, with the link to the social media of the website\n\n" +
@@ -71,70 +72,70 @@ namespace Portfolio.Services
 
             #region Level1
             ProjectModel pLevel1 = new ProjectModel("Level 1", "",
-                "Java, javafx", null, "https://github.com/abaivel/projet_javafx", 2, 2024, Enums.TypeProjectEnum.SCHOOL);
+                "Java, javafx", null, "https://github.com/abaivel/projet_javafx", 2, 2024, TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WINDOWS_APP);
 
             Projects.Add(pLevel1);
             #endregion
 
             #region LBAPropreteWebsite
             ProjectModel pLBAWeb = new ProjectModel("LBA Proprete Website", "",
-                "HTML, CSS, PHP", "https://baivel.com/", null, 1, 2023, Enums.TypeProjectEnum.WORK);
+                "HTML, CSS, PHP", "https://baivel.com/", null, 1, 2023, TypeProjectEnum.WORK, TypeSoftwareEnum.WEBSITE);
 
             Projects.Add(pLBAWeb);
             #endregion
 
             #region LBAPropreteAndroidApp
             ProjectModel pLBAAndroid = new ProjectModel("LBA Proprete Android App", "",
-                "Java, Kotlin", null, null, 1, 2022, Enums.TypeProjectEnum.WORK);
+                "Java, Kotlin", null, null, 1, 2022, TypeProjectEnum.WORK, TypeSoftwareEnum.ANDROID_APP);
 
             Projects.Add(pLBAAndroid);
             #endregion
 
             #region Jeunes64
             ProjectModel pJeunes64 = new ProjectModel("Jeunes 6.4", "",
-                "HTML, CSS, PHP", "/jeunes64", "https://github.com/max91p/projet_Jeunes_6.4", 4, 2023, Enums.TypeProjectEnum.SCHOOL);
+                "HTML, CSS, PHP", "/jeunes64", "https://github.com/max91p/projet_Jeunes_6.4", 4, 2023, TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
 
             Projects.Add(pJeunes64);
             #endregion
 
             #region CYmeteo
             ProjectModel pCYMeteo = new ProjectModel("CY meteo", "",
-                "C, Shell", null, "https://github.com/abaivel/projet_meteo", 1, 2023, Enums.TypeProjectEnum.SCHOOL);
+                "C, Shell", null, "https://github.com/abaivel/projet_meteo", 1, 2023, TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WINDOWS_APP);
 
             Projects.Add(pCYMeteo);
             #endregion
 
             #region Tetris
             ProjectModel pTetris = new ProjectModel("Tetris", "",
-                "C", null, "https://github.com/abaivel/projet_tetris", 1, 2022, Enums.TypeProjectEnum.SCHOOL);
+                "C", null, "https://github.com/abaivel/projet_tetris", 1, 2022, TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WINDOWS_APP);
 
             Projects.Add(pTetris);
             #endregion
 
             #region Bujo
             ProjectModel pBujo = new ProjectModel("Bujo", "",
-                "Java, Kotlin", null, null, 1, 2022, Enums.TypeProjectEnum.PERSO);
+                "Java, Kotlin", null, null, 1, 2022, TypeProjectEnum.PERSO, TypeSoftwareEnum.ANDROID_APP);
 
             Projects.Add(pBujo);
             #endregion
 
             #region EcoBasket
             ProjectModel pEcoBasket = new ProjectModel("Eco-Basket", "",
-                "Kotlin", null, null, 1, 2022, Enums.TypeProjectEnum.SCHOOL);
+                "Kotlin", null, null, 1, 2022, TypeProjectEnum.SCHOOL, TypeSoftwareEnum.ANDROID_APP);
 
             Projects.Add(pEcoBasket);
             #endregion
 
             #region EvolutionGame
             ProjectModel pEvolGame = new ProjectModel("Evolution Game", "",
-                "Python, Tkinter", null, null, 1, 2021, Enums.TypeProjectEnum.PERSO);
+                "Python, Tkinter", null, null, 1, 2021, TypeProjectEnum.PERSO, TypeSoftwareEnum.WINDOWS_APP);
 
             Projects.Add(pEvolGame);
             #endregion
 
             #region Mastermind
             ProjectModel pMastermind = new ProjectModel("Mastermind", "",
-                "Python, Tkinter", null, null, 1, 2021, Enums.TypeProjectEnum.PERSO);
+                "Python, Tkinter", null, null, 1, 2021, TypeProjectEnum.PERSO, TypeSoftwareEnum.WINDOWS_APP);
 
             Projects.Add(pMastermind);
             #endregion

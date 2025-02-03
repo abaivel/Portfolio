@@ -16,7 +16,8 @@ namespace Portfolio.Models
         public int NbPeople { get; set; } = 1;
         public int Year { get; set; }
         public TypeProjectEnum TypeProjectEnum { get; set; }
-        public ProjectModel(string name, string intro, string language, string? url, string? githubUrl, int nbPeople, int year, TypeProjectEnum typeProjectEnum)
+        public TypeSoftwareEnum TypeSoftwareEnum { get; set; }
+        public ProjectModel(string name, string intro, string language, string? url, string? githubUrl, int nbPeople, int year, TypeProjectEnum typeProjectEnum, TypeSoftwareEnum typeSoftwareEnum)
         {
             Name = name;
             Introduction= intro;
@@ -26,6 +27,7 @@ namespace Portfolio.Models
             NbPeople = nbPeople;
             Year = year;
             TypeProjectEnum = typeProjectEnum;
+            TypeSoftwareEnum = typeSoftwareEnum;
         }
     }
 }
