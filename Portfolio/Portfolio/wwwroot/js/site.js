@@ -1,10 +1,4 @@
-﻿window.registerViewportChangeCallback = (dotnetHelper) => {
-	window.addEventListener('resize', () => {
-		//dotnetHelper.invokeMethodAsync('OnResize', isDevice());
-		generateAnimationHome();
-	});
-}
-function isDevice() {
+﻿function isDevice() {
 	let width = document.body.clientWidth;
 	return width < 900;
 }

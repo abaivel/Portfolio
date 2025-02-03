@@ -39,5 +39,14 @@
 	</MudItem>
 </MudItem>
 
+<script>
+		window.registerViewportChangeCallback = (dotnetHelper) => {
+		window.addEventListener('resize', () => {
+			//dotnetHelper.invokeMethodAsync('OnResize', isDevice());
+			generateAnimationHome();
+		});
+	}
+</script>
+
 @*<MudImage Style="width:100%" Src="images/image_home.jpg"/>*@
 
