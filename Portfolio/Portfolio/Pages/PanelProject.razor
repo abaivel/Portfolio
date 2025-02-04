@@ -5,16 +5,16 @@
 	<MudText Typo="Typo.h4">@Project.Name</MudText>
 	<MudText Typo="Typo.h5">@Project.Language</MudText>
 	<br />
-	<MudGrid Justify="Justify.Center" Spacing="0" Style="margin: 10px 0;">
-		<MudItem Style="width:33%;text-align: center;">
+	<MudGrid Justify="Justify.Center" Spacing="0" Class="div-infos-project">
+		<MudItem>
 			<MudIcon Icon="@Icons.Material.Filled.People"></MudIcon>
 			<MudText>@Project.NbPeople</MudText>
 		</MudItem>
-		<MudItem Style="width:33%;text-align: center;border-left: lightgrey 2px solid;">
+		<MudItem>
 			<MudIcon Icon="@Icons.Material.Filled.CalendarToday"></MudIcon>
 			<MudText>@Project.Year</MudText>
 		</MudItem>
-		<MudItem Style="width:33%;text-align: center;border-left: lightgrey 2px solid;">
+		<MudItem>
 			<MudIcon Icon="@Icons.Material.Filled.BusinessCenter"></MudIcon>
 			@if (Project.TypeProjectEnum == Enums.TypeProjectEnum.SCHOOL){
 				<MudText>School Project</MudText>
@@ -28,14 +28,15 @@
 		</MudItem>
 	</MudGrid>
 	<br/>
-	<MudItem Style="gap: 20px;display: grid;">
-		<MudText Typo="Typo.body1" Align="Align.Justify" Style="width:95%;margin: auto;">
+	<MudItem Class="div-text-project">
+		<MudText Typo="Typo.body1" Align="Align.Justify" Class="text-project-without-image">
 			@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Introduction), "\r?\n|\r", "<br />"))
 		</MudText>
 		@for (var i=0;i<Project.Paragraphes.Count;i++){
 			var index = i;
 			@if (Project.Images[index] != null){
-				@if (index % 2 == 0)
+				countParagraphe++;
+				@if (countParagraphe % 2 == 0)
 				{
 					<MudItem Class="div-text-left-image-right d-flex justify-center">
 						<MudItem Class="div-text">
@@ -60,14 +61,14 @@
 					</MudItem>
 				}
 			}else{
-				<MudText Typo="Typo.body1" Align="Align.Justify" Style="width:95%;margin: auto;">
+				<MudText Typo="Typo.body1" Align="Align.Justify" Class="text-project-without-image">
 					@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Paragraphes[index]), "\r?\n|\r", "<br />"))
 				</MudText>
 			}
 		}
 	</MudItem>
 	<br />
-	<MudItem Style="gap: 10px;display: flex;">
+	<MudItem Class="div-buttons-links-project">
 		@if (Project.GithubUrl!=null){
 			<MudButton Href="@Project.GithubUrl"
 					   Target="_blank"

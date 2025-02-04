@@ -45,7 +45,7 @@ namespace Portfolio.Pages
 
         public void ValueSearchedChanged(string value)
         {
-            ListProjectsSearched = ListProjects.Where(x => x.Name.Contains(value) ||x.Language.Contains(value)).ToList();
+            ListProjectsSearched = ListProjects.Where(x => x.Name.ToLower().Contains(value.ToLower()) ||x.Language.ToLower().Contains(value.ToLower())).ToList();
             ValueSearched = value;
         }
 

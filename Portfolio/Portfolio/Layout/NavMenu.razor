@@ -1,7 +1,7 @@
 ﻿@using MudBlazor
 <MudDrawer Open="@CollapseNavMenu" OpenChanged="@((bool c)=>{CollapseNavMenuChanged.InvokeAsync(c);})" Elevation="1" Variant="@DrawerVariant.Temporary" OverlayAutoClose="true" Color="Color.Primary" >
     <MudDrawerHeader>
-        <MudText Style="font-family:'Cascadia Code';font-size:20px; text-align:center">Alexandra Baivel</MudText>
+        <MudText Class="title-header">Alexandra Baivel</MudText>
     </MudDrawerHeader>
     <MudNavMenu>
         <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home" IconColor="Color.Secondary"> 

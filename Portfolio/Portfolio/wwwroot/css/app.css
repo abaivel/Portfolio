@@ -1,3 +1,16 @@
+html, body, #app{
+    height:100%;
+}
+#loading {
+    height: 100%;
+    display: flex;
+}
+
+#loading div {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
 :root {
     --mud-palette-primary: rgba(10, 0,104, 1) !important;
     --mud-palette-primary-rgb: 10, 0, 104 !important;
@@ -23,8 +36,27 @@
     --mud-palette-text-primary: #000000 !important;
 }
 
-/*region home*/
+.width-fit-content{
+    width:fit-content;
+}
 
+/*region layout+navbar*/
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.title-header {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#maincontent {
+    flex: 1;
+}
+/*endregion*/
+/*region home*/
 #home-background {
     height: 100%;
     margin-top: -64px;
@@ -100,14 +132,28 @@
     height: 400px;
     border: var(--mud-palette-primary) solid 2px;
     border-radius: 15px !important;
-    transition: all .2s ease-in-out;
-    z-index: 1;
+    transition: all .2s ease-in-out !important;
+    z-index: 1 !important;
+    position: relative;
+    background-color: rgba(255,255,255,0.6) !important;
+    background-blend-mode: lighten;
+    background-size: cover;
 }
 
 .project-container:hover {
     transform: scale(1.1);
     z-index: 5 !important;
     box-shadow: var(--mud-elevation-10);
+}
+
+.div-buttons-links-project {
+    gap: 10px;
+    display: flex;
+}
+
+.project-container .div-buttons-links-project {
+    position: absolute;
+    bottom: 12px;
 }
 
 .dialog-project .mud-dialog-title {
@@ -132,6 +178,29 @@
     overflow-y: scroll;
     max-height: 80vh;
 }
+
+.div-infos-project {
+    margin: 10px 0;
+}
+
+.div-infos-project div {
+    width: 33%;
+    text-align: center;
+}
+
+.div-infos-project div:not(:first-child) {
+    border-left: lightgrey 2px solid;
+}
+
+.div-text-project {
+    gap: 20px;
+    display: grid;
+}
+
+.text-project-without-image {
+    width: 95%;
+    margin: auto;
+}
 /*endregion*/
 /*region contact page*/
 .white-frame-contact {
@@ -147,7 +216,7 @@
 
 @media (min-width: 901px) {
     .white-frame {
-        padding: 50px 10px;
+        padding: 50px 12px;
     }
     .header_mobile {
         display: none !important;

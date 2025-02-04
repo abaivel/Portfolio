@@ -7,5 +7,6 @@ namespace Portfolio.Pages
     {
         [Parameter]
         public ProjectModel Project { get; set; }
+        public int countParagraphe { get; set; } = 0;
     }
 }

@@ -8,14 +8,14 @@
 
 @* Needed for snackbars *@
 <MudSnackbarProvider />
-<MudLayout Style="display: flex;flex-direction: column;min-height: 100vh;">
+<MudLayout Class="layout">
     <MudAppBar Class="navbar header_mobile" Elevation="@(isHome?0:5)" Color="@(isHome?Color.Transparent:Color.Primary)">
             <MudIconButton Icon="@Icons.Material.Filled.Menu" Edge="Edge.Start" OnClick="ToggleNavMenu" Color="Color.Secondary"></MudIconButton>
             <MudSpacer />
-        <MudLink Style="font-family:'Cascadia Code';font-size:20px;text-decoration: none;" Color="Color.Secondary" OnClick='(()=>Navigate(""))'>Alexandra Baivel</MudLink>
+        <MudLink Class="title-header" Color="Color.Secondary" OnClick='(()=>Navigate(""))'>Alexandra Baivel</MudLink>
     </MudAppBar>
     <MudAppBar Class="navbar header_computer" Elevation="@(isHome?0:5)" Color="@(isHome?Color.Transparent:Color.Primary)">
-        <MudLink Style="font-family:'Cascadia Code';font-size:20px;text-decoration: none;" Color="Color.Secondary" OnClick='(()=>Navigate(""))'>Alexandra Baivel</MudLink>
+        <MudLink Class="title-header" Color="Color.Secondary" OnClick='(()=>Navigate(""))'>Alexandra Baivel</MudLink>
             <MudSpacer />
             <MudSpacer />
             <MudSpacer />
@@ -46,7 +46,7 @@
     </MudAppBar>
     <NavMenu CollapseNavMenu="CollapseNavMenu" CollapseNavMenuChanged="CollapseChanged" />
     <CascadingValue Value="this">
-        <MudMainContent Style="flex: 1;" id="maincontent">
+        <MudMainContent id="maincontent">
             @Body
         </MudMainContent>
     </CascadingValue>

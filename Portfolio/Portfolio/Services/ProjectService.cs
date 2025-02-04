@@ -48,7 +48,7 @@ namespace Portfolio.Services
 
             #region Hedgeshop
             ProjectModel pHedgeShop = new ProjectModel("HedgeShop", "This project is a sales website. We had to choose the objects to sell and one of my teammate adores hedgehog so we did a website to sell objects for hedgehogs.\n\n",
-                "React.js, Django", null, "https://github.com/UnderSkyle/ProjetWebING1", 3, 2024, "images/logo_hedgeshop.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
+                "Javascript, React.js, Python, Django", null, "https://github.com/UnderSkyle/ProjetWebING1", 3, 2024, "images/logo_hedgeshop.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
 
             pHedgeShop.Paragraphes.Add("The website opens on a home page presenting the website. The website has the typical page of a e-commerce website. " +
                 "There are 3 kinds of product, \"Nourriture\" (\"Food\"), \"Cabane\" (\"Shed\"), \"Jouets\" (\"Toys\"). We also had to add a strange contact page. Those pages are also accessible from the footer, with the link to the social media of the website\n\n" +
@@ -64,15 +64,42 @@ namespace Portfolio.Services
                 "Once the user is connected, he stays connected until he deconnects. In his profile, he can see his personnal informations, his shipping addresses and his past orders.");
             pHedgeShop.Images.Add("images/hedgeshop_connection_page.png");
 
-            pHedgeShop.Paragraphes.Add("");
+            pHedgeShop.Paragraphes.Add("When the user add a product to his cart, the number above the cart icon increases.\n\n" +
+                " In the cart page, the user can place an order by choosing a shipping address. As it's a simple school project, no paiement process is implemented.");
             pHedgeShop.Images.Add("images/hedgeshop_cart_page.png");
 
             Projects.Add(pHedgeShop);
             #endregion
 
             #region Level1
-            ProjectModel pLevel1 = new ProjectModel("Level 1", "",
+            ProjectModel pLevel1 = new ProjectModel("Level 1", "The purpose of that project was to program the first level of a video game in Java. " +
+                "In the game, the player can control a character (a penguin) in a world where he can fight monters, interact with non-playable characters (NPC), find and use items.",
                 "Java, javafx", null, "https://github.com/abaivel/projet_javafx", 2, 2024, "images/image_level1.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WINDOWS_APP);
+            pLevel1.Paragraphes.Add("The level is composed of three maps, accessible by different doors. The player can move his character (the penguin) with the keyboard arrows.\n" +
+                "There are different kinds of squares :\n" +
+                "- Grass (in a green) : The character can move on it\n" +
+                "- River (in blue) : The character will die if he go on it without a buoy\n" +
+                "- Wall (in brown) : The character cannot go on it\n" +
+                "- Hedge (in dark green) : The character cannot go on it but it can jump over it\n" +
+                "- Tree : The character cannot go on it");
+            pLevel1.Images.Add("images/level1_grille_game.png");
+
+            pLevel1.Paragraphes.Add("On the grid, the character can also find items like a buoy, a potion, a key (to open the door), a sword, etc..." +
+                "Once he find it, he can saved in his inventory. He can also find money and life points.");
+            pLevel1.Images.Add(null);
+
+            pLevel1.Paragraphes.Add("On the grid, there is 3 kinds of monsters : Wolves, Slimes and Looters." +
+                "If the character comes close to a monster, a combat starts. Both fighters can use potions, can dodge and can attack. Each kind of monster has its particular attack. For example, the slimes poisoned the other fighter.\n\n" +
+                "The fight stops when one of the fighter dies. If its the player's character, the game is over. If it's the monster, he drops his items before dying and the character can get them.");
+            pLevel1.Images.Add("images/level1_combat_page.png");
+
+            pLevel1.Paragraphes.Add("There is also the NPCs (Non-playable character). There are 3 kinds : Merchants, Fouras (it's a reference to a french TV show but it mean a wizard who asks egnimas) and Useless Persons. " +
+                "The Useless Persons are indeed useless and just says randoms sentences. The Fouras ask enigmas and give money if the player answers correctly. The merchants can do more actions." +
+                "The player can :\n" +
+                " - sell some of his items to the merchant\n" +
+                " - buy some items from the merchant\n" +
+                " - swap one of his item with one from the merchant");
+            pLevel1.Images.Add("images/level1_dialog_merchant.png");
 
             Projects.Add(pLevel1);
             #endregion
@@ -93,7 +120,7 @@ namespace Portfolio.Services
 
             #region Jeunes64
             ProjectModel pJeunes64 = new ProjectModel("Jeunes 6.4", "",
-                "HTML, CSS, PHP", "/jeunes64", "https://github.com/max91p/projet_Jeunes_6.4", 4, 2023, "images/image_jeunes64.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
+                "HTML, CSS, PHP", "http://www.baivel.com/jeunes64/page_accueil.html", "https://github.com/max91p/projet_Jeunes_6.4", 4, 2023, "images/image_jeunes64.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
 
             Projects.Add(pJeunes64);
             #endregion

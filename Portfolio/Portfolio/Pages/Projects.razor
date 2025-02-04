@@ -11,8 +11,8 @@
 		<MudItem Class="div-title-page">
                 <MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Projects</MudText>
             </MudItem>
-		<div class="white-frame" style="padding:10px;">
-			<MudItem Style="margin-bottom: 20px;">
+		<div class="white-frame pa-3">
+			<MudItem class="mb-5">
 				<MudTextField Class="searchbar-projects" Immediate="true" Value="@ValueSearched" ValueChanged="@((string v) => ValueSearchedChanged(v))" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" HelperText="Enter a project name or a programming language" Variant="Variant.Outlined"></MudTextField>
 			</MudItem>
 			<MudStack Row="true" Justify="Justify.SpaceEvenly" Wrap="Wrap.Wrap">
@@ -22,12 +22,10 @@
 						</MudItem>
 					}
 			</MudStack>
-			</div>
-			<br />
-		@*<MudOverlay Style="height:100vh;width:100vh" @bind-Visible="@projectOpen" DarkBackground AutoClose="true" OnClosed="CloseProject">
-			<PanelProject Project="@ProjectSelected"></PanelProject>
-		</MudOverlay>*@
+			<MudText class="mt-6 mb-4" Align="Align.Center">More projects are coming...</MudText>
 		</div>
+		<br />
+	</div>
 </div>
 
 <MudDialog @bind-Visible="@projectOpen" Options="new() {CloseButton = true, MaxWidth = MaxWidth.Large }" Class="dialog-project">
