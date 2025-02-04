@@ -1,7 +1,23 @@
 ﻿@using MudBlazor
-<MudPaper Elevation="5" Class="project-container px-5 py-3" Style="position: relative;">
-	<MudText Typo="Typo.h4">@Project.Name</MudText>
-	<MudText Typo="Typo.h6">@Project.Language</MudText>
+<MudPaper Elevation="5" Class="project-container px-5 py-3" Style=@("position: relative;background-image: url('"+Project.Logo+"');background-color: rgba(255,255,255,0.6);background-blend-mode: lighten;background-size: cover;")>
+	<MudStack Justify="Justify.SpaceBetween" Row="true">
+		<MudItem Style="width: fit-content;">
+			<MudText Style="width: fit-content;" Typo="Typo.h4">@Project.Name</MudText>
+			<MudText Style="width: fit-content;" Typo="Typo.h6">@Project.Language</MudText>
+		</MudItem>
+		@if (Project.TypeSoftwareEnum == Enums.TypeSoftwareEnum.WEBSITE)
+		{
+			<MudIcon Color="Color.Primary" Class="icon-project-container" Icon="@Icons.Material.Filled.Language" Title="Website"></MudIcon>
+		}
+		else if (Project.TypeSoftwareEnum == Enums.TypeSoftwareEnum.ANDROID_APP){
+			<MudIcon Color="Color.Primary" Class="icon-project-container" Icon="@Icons.Material.Filled.PhoneAndroid" Title="Android App"></MudIcon>
+		}else{
+			<MudIcon Color="Color.Primary" Class="icon-project-container" Icon="@Icons.Material.Filled.Computer" Title="Computer App"></MudIcon>
+		}
+	</MudStack>
+	@*@if (Project.Logo!=null){
+		<MudImage Style="max-width: 260px;" ObjectFit="ObjectFit.Contain" Src="@Project.Logo"></MudImage>
+	}*@
 	<MudItem Style="gap: 10px;display: flex;position: absolute;bottom: 12px;">
 		@if (Project.GithubUrl != null)
 		{

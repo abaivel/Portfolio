@@ -4,12 +4,12 @@
 
 <PageTitle>Baivel - Home</PageTitle>
 
-<div style="height:100%;margin-top:-64px;" id="home-background">
-	<MudItem Class="title-home-page" Style="padding-top:100px;height:max-content">
-		<MudText Typo="Typo.h1" Style="font-family:'Cascadia Code';border:none !important;box-shadow: none !important;outline: none !important;" Color="Color.Secondary"> Alexandra<br />Baivel</MudText>
-		<MudText Typo="Typo.h3" Style="font-family:'Cascadia Code'" Color="Color.Secondary"> Software Developer</MudText>
-		<MudItem Style="margin-top:15px">
-			<MudButton Color="Color.Secondary" Variant="Variant.Filled" Style="font-size:15px;" Href="#aboutme">About Me</MudButton>
+<div id="home-background">
+	<MudItem Class="title-home-page">
+		<MudText Typo="Typo.h1" Color="Color.Secondary"> Alexandra<br />Baivel</MudText>
+		<MudText Typo="Typo.h3" Color="Color.Secondary"> Software Developer</MudText>
+		<MudItem Class="home-buttons">
+			<MudButton Color="Color.Secondary" Variant="Variant.Filled" Href="#aboutme">About Me</MudButton>
 			<MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Secondary" aria-label="github" Href="https://github.com/abaivel" />
 			<MudIconButton Icon="@Icons.Custom.Brands.LinkedIn" Color="Color.Secondary" aria-label="linkedin" Href="https://www.linkedin.com/in/alexandra-baivel" />
 			<MudIconButton Icon="@Icons.Material.Filled.Mail" Color="Color.Secondary" aria-label="main" Href="mailto:abaivel@outlook.fr" />
@@ -17,11 +17,11 @@
 	</MudItem>
 </div>
 <MudItem Class="">
-	<MudItem Class="about-me-part d-flex justify-space-between flex-wrap" Style="width:100%">
-		<MudItem id="aboutme-image" Style="align-content: center;">
-			<MudImage  Fluid="true" Src="images/CodePeople.jpeg" ObjectFit="ObjectFit.Cover" Style="height:100%" Alt="Picture of a girl programming (not me)"/>
+	<MudItem Class="about-me-part d-flex justify-space-between flex-wrap">
+		<MudItem id="aboutme-image">
+			<MudImage Fluid="true" Src="images/CodePeople.jpeg" ObjectFit="ObjectFit.Cover" Alt="Picture of a girl programming (not me)"/>
 		</MudItem>
-		<MudItem Style="align-content: center;" id="aboutme">
+		<MudItem id="aboutme">
 			<MudText Class="pb-5 pt-5" Typo="Typo.h3" Color="Color.Primary">About me</MudText>
 			<MudText Align="Align.Justify" Color="Color.Primary">
 				I'm Alexandra Baivel, a @(Age)-year-old French student. 
@@ -32,8 +32,8 @@
 
 				You can learn more about my projects and my work here :
 			</MudText>
-			<MudButton Color="Color.Primary" Variant="Variant.Filled" Style="font-size:15px;margin-top:15px;margin-bottom: 15px;" Href="/projects">My projects</MudButton>
-			<MudButton Color="Color.Primary" Variant="Variant.Filled" Style="font-size:15px;margin-top:15px;margin-bottom: 15px;" Href="/work">My work</MudButton>
+			<MudButton Color="Color.Primary" Variant="Variant.Filled" Class="button-classic" Href="/projects">My projects</MudButton>
+			<MudButton Color="Color.Primary" Variant="Variant.Filled" Class="button-classic" Href="/work">My work</MudButton>
 			<br/>
 		</MudItem>
 	</MudItem>

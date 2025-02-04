@@ -1,7 +1,7 @@
 ﻿@using MudBlazor
 @using System.Web
 @using System.Text.RegularExpressions
-<MudItem Style="width:100%;overflow-y: scroll;max-height: 80vh;">
+<MudItem Class="panel-project-div">
 	<MudText Typo="Typo.h4">@Project.Name</MudText>
 	<MudText Typo="Typo.h5">@Project.Language</MudText>
 	<br />
@@ -28,42 +28,44 @@
 		</MudItem>
 	</MudGrid>
 	<br/>
-	<MudText Typo="Typo.body1" Align="Align.Justify">
-		@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Introduction), "\r?\n|\r", "<br />"))
-	</MudText>
-	@for (var i=0;i<Project.Paragraphes.Count;i++){
-		var index = i;
-		@if (Project.Images[index] != null){
-			@if (index % 2 == 0)
-			{
-				<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%;margin-top:20px" Spacing="5" Justify="Justify.SpaceBetween">
-					<MudItem Style="width:48%;align-content: center;" id="aboutme">
-						<MudText Align="Align.Justify" Typo="Typo.body1">
-							@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Paragraphes[index]), "\r?\n|\r", "<br />"))
-					</MudText>
-				</MudItem>
-				<MudItem Style="width:48%;align-content: center;">
-					<MudImage Fluid="true" Src="@(Project.Images[index])" />
-				</MudItem>
-			</MudStack>
-			}else{
-				<MudStack Row="true" Wrap="Wrap.Wrap" Style="width:100%;margin-top:20px" Spacing="5" Justify="Justify.SpaceBetween">
-					<MudItem Style="width:48%;align-content: center;">
-						<MudImage Fluid="true" Src="@(Project.Images[index])" />
-					</MudItem>
-					<MudItem Style="width:48%;align-content: center;" id="aboutme">
-						<MudText Align="Align.Justify" Typo="Typo.body1">
-							@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Paragraphes[index]), "\r?\n|\r", "<br />"))
+	<MudItem Style="gap: 20px;display: grid;">
+		<MudText Typo="Typo.body1" Align="Align.Justify" Style="width:95%;margin: auto;">
+			@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Introduction), "\r?\n|\r", "<br />"))
+		</MudText>
+		@for (var i=0;i<Project.Paragraphes.Count;i++){
+			var index = i;
+			@if (Project.Images[index] != null){
+				@if (index % 2 == 0)
+				{
+					<MudItem Class="div-text-left-image-right d-flex justify-center">
+						<MudItem Class="div-text">
+							<MudText Align="Align.Justify" Typo="Typo.body1">
+								@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Paragraphes[index]), "\r?\n|\r", "<br />"))
 						</MudText>
 					</MudItem>
-				</MudStack>
+					<MudItem Class="div-image">
+						<MudImage Fluid="true" Src="@(Project.Images[index])" />
+					</MudItem>
+				</MudItem>
+				}else{
+					<MudItem Class="div-text-right-image-left d-flex justify-center">
+						<MudItem Class="div-image">
+							<MudImage Fluid="true" Src="@(Project.Images[index])" />
+						</MudItem>
+						<MudItem Class="div-text">
+							<MudText Align="Align.Justify" Typo="Typo.body1">
+								@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Paragraphes[index]), "\r?\n|\r", "<br />"))
+							</MudText>
+						</MudItem>
+					</MudItem>
+				}
+			}else{
+				<MudText Typo="Typo.body1" Align="Align.Justify" Style="width:95%;margin: auto;">
+					@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Paragraphes[index]), "\r?\n|\r", "<br />"))
+				</MudText>
 			}
-		}else{
-			<MudText Typo="Typo.body1" Align="Align.Justify">
-				@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Paragraphes[index]), "\r?\n|\r", "<br />"))
-			</MudText>
 		}
-	}
+	</MudItem>
 	<br />
 	<MudItem Style="gap: 10px;display: flex;">
 		@if (Project.GithubUrl!=null){

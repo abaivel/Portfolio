@@ -6,16 +6,16 @@
 
 <PageTitle>Baivel - Projects</PageTitle>
 
-<div style="width:100%;background-image:url('images/background_page.jpg');" id="fond">
-	<div style="background-color: #0a006899;height: 100%;">
-            <MudItem Style="padding-top:36px;padding-bottom: 36px;">
-                <MudText Typo="Typo.h3" Style="font-family:'Cascadia Code'" Color="Color.Secondary" Align="Align.Center">Projects</MudText>
+<div class="background-page">
+	<div class="filter-background-page">
+		<MudItem Class="div-title-page">
+                <MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Projects</MudText>
             </MudItem>
 		<div class="white-frame" style="padding:10px;">
 			<MudItem Style="margin-bottom: 20px;">
-				<MudTextField Immediate="true" Value="@ValueSearched" ValueChanged="@((string v) => ValueSearchedChanged(v))" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" Label="Enter a project name or a programming language" Variant="Variant.Outlined" Style="width:30%"></MudTextField>
+				<MudTextField Class="searchbar-projects" Immediate="true" Value="@ValueSearched" ValueChanged="@((string v) => ValueSearchedChanged(v))" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" HelperText="Enter a project name or a programming language" Variant="Variant.Outlined"></MudTextField>
 			</MudItem>
-			<MudStack Row="true" Justify="Justify.SpaceBetween" Wrap="Wrap.Wrap">
+			<MudStack Row="true" Justify="Justify.SpaceEvenly" Wrap="Wrap.Wrap">
 					@foreach (var t in ListProjectsSearched){
 						<MudItem onclick="@(()=>OpenProject(t))">
 						<ProjectContainer Project="t"></ProjectContainer>
@@ -30,7 +30,7 @@
 		</div>
 </div>
 
-<MudDialog @bind-Visible="@projectOpen" Options="new() {CloseButton = true, MaxWidth = MaxWidth.Large }">
+<MudDialog @bind-Visible="@projectOpen" Options="new() {CloseButton = true, MaxWidth = MaxWidth.Large }" Class="dialog-project">
 	<DialogContent>
 		<PanelProject Project="@ProjectSelected"></PanelProject>
 	</DialogContent>

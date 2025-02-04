@@ -3,17 +3,17 @@
 @using System.ComponentModel.DataAnnotations
 
 <PageTitle>Baivel - Contact</PageTitle>
-<div style="width:100%;height: 100%;background-image:url('images/background_page.jpg');" id="fond">
-	<div style="background-color: #0a006899;height: 100%;">
-			<MudItem Style="padding-top:36px;height:max-content;padding-bottom: 36px;">
-				<MudText Typo="Typo.h3" Style="font-family:'Cascadia Code'" Color="Color.Secondary" Align="Align.Center">Contact</MudText>
+<div class="background-page">
+	<div class="filter-background-page">
+			<MudItem Class="div-title-page">
+				<MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Contact</MudText>
 			</MudItem>
-		<div class="white-frame" style="margin-left:20%;margin-right:20%;">
+		<div class="white-frame white-frame-contact">
 				<MudForm @ref="form" @bind-IsValid="@success">
 					<MudTextField Variant="Variant.Outlined" @bind-Value="@Email" T="string" Label="Email" Required="true" RequiredError="Email is required!"
 								  Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})" />
 					<MudTextField @bind-Value="@Message" T="string" Label="Message" Lines="10" Variant="Variant.Outlined" />
-					<div class="g-recaptcha" data-sitekey="6LfY48AqAAAAAETDgfcHf5DHteyYVO0Ij8qedQF0" style="margin: auto;height:10vh;"></div>
+					<div class="g-recaptcha" data-sitekey="6LfY48AqAAAAAETDgfcHf5DHteyYVO0Ij8qedQF0"></div>
 					<br />
 					<MudButton Onclick="ValidateCaptcha" Variant="Variant.Filled" Color="Color.Primary" Disabled="@(Email.Count()==0 || Message.Count()==0)" Class="ma-auto">Register</MudButton>
 				</MudForm>

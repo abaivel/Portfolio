@@ -15,9 +15,10 @@ namespace Portfolio.Models
         public string? GithubUrl { get; set; }
         public int NbPeople { get; set; } = 1;
         public int Year { get; set; }
+        public string? Logo {  get; set; }
         public TypeProjectEnum TypeProjectEnum { get; set; }
         public TypeSoftwareEnum TypeSoftwareEnum { get; set; }
-        public ProjectModel(string name, string intro, string language, string? url, string? githubUrl, int nbPeople, int year, TypeProjectEnum typeProjectEnum, TypeSoftwareEnum typeSoftwareEnum)
+        public ProjectModel(string name, string intro, string language, string? url, string? githubUrl, int nbPeople, int year, string? logo, TypeProjectEnum typeProjectEnum, TypeSoftwareEnum typeSoftwareEnum)
         {
             Name = name;
             Introduction= intro;
@@ -26,6 +27,7 @@ namespace Portfolio.Models
             GithubUrl = githubUrl;
             NbPeople = nbPeople;
             Year = year;
+            Logo = logo;
             TypeProjectEnum = typeProjectEnum;
             TypeSoftwareEnum = typeSoftwareEnum;
         }

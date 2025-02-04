@@ -13,13 +13,63 @@
     --mud-palette-secondary-lighten: rgb(255, 255, 255) !important;
     --mud-typography-default-family: 'Cascadia Code' !important;
     --mud-typography-button-family: 'Cascadia Code' !important;
+    --mud-typography-h1-family: 'Cascadia Code' !important;
+    --mud-typography-h2-family: 'Cascadia Code' !important;
     --mud-typography-h3-family: 'Cascadia Code' !important;
     --mud-typography-h4-family: 'Cascadia Code' !important;
     --mud-typography-h5-family: 'Cascadia Code' !important;
+    --mud-typography-h6-family: 'Cascadia Code' !important;
     --mud-typography-body1-family: 'Cascadia Code' !important;
     --mud-palette-text-primary: #000000 !important;
 }
 
+/*region home*/
+
+#home-background {
+    height: 100%;
+    margin-top: -64px;
+}
+
+.title-home-page {
+    padding-top: 100px;
+    height: max-content;
+}
+
+.title-home-page h1 {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.home-buttons {
+    margin-top: 15px;
+}
+
+.home-buttons button {
+    font-size: 15px;
+}
+
+.about-me-part div {
+    align-content: center;
+}
+
+.about-me-part img {
+    height: 100% !important;
+}
+
+.about-me-part {
+    width: 100%;
+}
+
+.button-classic {
+    font-size: 15px !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+/*endregion*/
+
+
+/*region frame-pages*/
 .white-frame {
     background-color: white;
     margin-left: 10px;
@@ -27,10 +77,73 @@
     border-radius: 15px;
 }
 
+.background-page {
+    width: 100%;
+    background-image: url('../images/background_page.jpg');
+}
+
+.filter-background-page {
+    background-color: #0a006899;
+    height: 100%;
+}
+
+.div-title-page {
+    padding-top: 36px;
+    height: max-content;
+    padding-bottom: 36px;
+}
+/*endregion*/
+
+/*projects pages*/
 .project-container {
     width: 300px;
     height: 400px;
+    border: var(--mud-palette-primary) solid 2px;
+    border-radius: 15px !important;
+    transition: all .2s ease-in-out;
+    z-index: 1;
 }
+
+.project-container:hover {
+    transform: scale(1.1);
+    z-index: 5 !important;
+    box-shadow: var(--mud-elevation-10);
+}
+
+.dialog-project .mud-dialog-title {
+    padding: 0 !important;
+}
+
+.dialog-project .mud-dialog-content {
+    margin: 0 !important;
+    padding: 24px !important;
+}
+
+.dialog-project {
+    margin: 20px;
+}
+
+.icon-project-container {
+    font-size: 2rem !important;
+}
+
+.panel-project-div {
+    width: 100%;
+    overflow-y: scroll;
+    max-height: 80vh;
+}
+/*endregion*/
+/*region contact page*/
+.white-frame-contact {
+    margin-left: 20% !important;
+    margin-right: 20% !important;
+}
+
+.g-recaptcha {
+    margin: auto;
+    height: 10vh;
+}
+/*endregion*/
 
 @media (min-width: 901px) {
     .white-frame {
@@ -57,7 +170,7 @@
     .div-text-left-image-right {
         width: 100%;
         margin-top: 20px;
-        gap: 20px;
+        gap: 5%;
         flex-direction: row !important;
         flex-wrap: wrap !important;
     }
@@ -65,12 +178,12 @@
     .div-text-right-image-left {
         width: 100%;
         margin-top: 20px;
-        gap: 20px;
+        gap: 5%;
         flex-direction: row !important;
         flex-wrap: wrap !important;
     }
     .div-text, .div-image {
-        width: 40%;
+        width: 45%;
         align-content: center;
     }
     .tabs-projects {
@@ -78,6 +191,9 @@
     }
     .tabs-projects .mud-tabs-tabbar-inner {
         height: 78vh;
+    }
+    .searchbar-projects {
+        width: 30%
     }
 }
 
@@ -116,6 +232,9 @@
     }
     .div-text, .div-image {
         width: 100%;
+    }
+    .searchbar-projects {
+        width: 100%
     }
 }
 
