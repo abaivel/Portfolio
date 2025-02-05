@@ -7,15 +7,15 @@
 	<br />
 	<MudGrid Justify="Justify.Center" Spacing="0" Class="div-infos-project">
 		<MudItem>
-			<MudIcon Icon="@Icons.Material.Filled.People"></MudIcon>
+			<MudIcon Icon="@Icons.Material.Filled.People" Title="Number of people who worked on the project"></MudIcon>
 			<MudText>@Project.NbPeople</MudText>
 		</MudItem>
 		<MudItem>
-			<MudIcon Icon="@Icons.Material.Filled.CalendarToday"></MudIcon>
+			<MudIcon Icon="@Icons.Material.Filled.CalendarToday" Title="Project's year'"></MudIcon>
 			<MudText>@Project.Year</MudText>
 		</MudItem>
 		<MudItem>
-			<MudIcon Icon="@Icons.Material.Filled.BusinessCenter"></MudIcon>
+			<MudIcon Icon="@Icons.Material.Filled.BusinessCenter" Title="Project's context'"></MudIcon>
 			@if (Project.TypeProjectEnum == Enums.TypeProjectEnum.SCHOOL){
 				<MudText>School Project</MudText>
 			}

@@ -73,13 +73,13 @@
         //await jSRuntime.InvokeVoidAsync("window.registerViewportChangeCallback", DotNetObjectReference.Create(this));
         //isMobile = await jSRuntime.InvokeAsync<bool>("isDevice","");
         string u = navigationManager.Uri.Substring(navigationManager.BaseUri.Length);
-        isHome = (u.Count() == 0 || u.Equals("index.html"));
+        isHome = (u.Count() == 0 || u.Equals("index.html") || u.Equals("#aboutme"));
     }
 
     protected override async Task OnParametersSetAsync()
     {
         string u = navigationManager.Uri.Substring(navigationManager.BaseUri.Length);
-        isHome = (u.Count() == 0 || u.Equals("index.html"));
+        isHome = (u.Count() == 0 || u.Equals("index.html") || u.Equals("#aboutme"));
     }
 
     /*[JSInvokable]

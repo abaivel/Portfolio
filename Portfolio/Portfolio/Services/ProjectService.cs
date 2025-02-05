@@ -74,7 +74,7 @@ namespace Portfolio.Services
             #region Level1
             ProjectModel pLevel1 = new ProjectModel("Level 1", "The purpose of that project was to program the first level of a video game in Java. " +
                 "In the game, the player can control a character (a penguin) in a world where he can fight monters, interact with non-playable characters (NPC), find and use items.",
-                "Java, javafx", null, "https://github.com/abaivel/projet_javafx", 2, 2024, "images/image_level1.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WINDOWS_APP);
+                "Java, JavaFX", null, "https://github.com/abaivel/projet_javafx", 2, 2024, "images/image_level1.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WINDOWS_APP);
             pLevel1.Paragraphes.Add("The level is composed of three maps, accessible by different doors. The player can move his character (the penguin) with the keyboard arrows.\n" +
                 "There are different kinds of squares :\n" +
                 "- Grass (in a green) : The character can move on it\n" +
@@ -113,7 +113,7 @@ namespace Portfolio.Services
 
             #region LBAPropreteAndroidApp
             ProjectModel pLBAAndroid = new ProjectModel("LBA Proprete Android App", "",
-                "Java, Kotlin", null, null, 1, 2022, "images/image_lba_proprete.png", TypeProjectEnum.WORK, TypeSoftwareEnum.ANDROID_APP);
+                "Java, Kotlin", null, "https://github.com/abaivel/Mission2Clean", 1, 2022, "images/image_lba_proprete.png", TypeProjectEnum.WORK, TypeSoftwareEnum.ANDROID_APP);
 
             Projects.Add(pLBAAndroid);
             #endregion
