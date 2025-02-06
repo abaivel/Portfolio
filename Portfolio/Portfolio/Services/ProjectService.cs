@@ -105,21 +105,49 @@ namespace Portfolio.Services
             #endregion
 
             #region LBAPropreteWebsite
-            ProjectModel pLBAWeb = new ProjectModel("LBA Proprete Website", "",
+            ProjectModel pLBAWeb = new ProjectModel("LBA Proprete Website", "This is a website I programmed for my father company. Indeed, my father has a cleaning company and he needed a website to manage his cleaning missions. He still isn't using it as he only have a few missions per week and doesn't have any employees.\n\n" +
+                "As it was one of my first website, the code is pretty basic and use only HTML, CSS and PHP. I had to learn how to use OVH, Filezilla and PHPMyAdmin to be able to host this website.",
                 "HTML, CSS, PHP", "https://baivel.com/", null, 1, 2023, "images/image_lba_proprete.png", TypeProjectEnum.WORK, TypeSoftwareEnum.WEBSITE);
+
+            pLBAWeb.Paragraphes.Add("The website opens on a connection page. It's not possible to create a account from here, only the admin accounts can create accounts for other people.\n\n " +
+                "The logins and the encrypted passwords are saved in a database. The connection process is not very secure because I had no knowledge about security back then, but I am planning on redoing this website correctly in the future.");
+            pLBAWeb.Images.Add("images/LBAProprete_connexion.png");
+
+            pLBAWeb.Paragraphes.Add("The website has 5 main pages. Two of them, \"Collaborateurs\" (\"Collaborators\") and \"Missions\", have the same purpose, which is showing the missions. The difference is the sorting. " +
+                "On the collaborators page, the list is sorted by collaborators and on the missions page, the list is sorted by missions (not very visible on the image as I have only 1 mission and 1 collaborator). On both pages, the user can filter the list by date and by collaborator/address (depending on the page).");
+            pLBAWeb.Images.Add("images/LBAProprete_collaborateurs.png");
+            pLBAWeb.Paragraphes.Add("On both those pages, a part of the tables are empty. Indeed, it's supposed to be filled with the data from a mobile app similar to the one I already did. That mobile app would fill the table with the time and place of the employees when they start the mission. That application is not programmed yet but it's one of my future project.");
+            pLBAWeb.Images.Add(null);
+
+            pLBAWeb.Paragraphes.Add("The page \"Affectations\" is made to create the missions. To add one, the user chooses an address, a day of the week, a start time, a end time of the missions. The user also chooses the start date and the end date of the contract with this client. To finish, the user chooses the collaborator who is going to do those missions.\n\n" +
+                "Once the affectation is created, the missions are generated automatically and are visible on the collaborators and missions pages. The end date of an affection can be modified and the list of missions will also be updated.\n\n" +
+                "The user can also filter the affectations by collaborator and by address.");
+            pLBAWeb.Images.Add("images/LBAProprete_affectations.png");
+
+            pLBAWeb.Paragraphes.Add("The page \"Paramètrages\" (\"Settings\") allows the users to manage their collaborators and their addresses. The admin accounts can also manage the manager accounts from this page. We decided to implement that idea of manager accounts with the idea of a bigger company, with not only one people managing the employees. When a user create a manager account, he receive a email with the generated password for that account. The user can sent it to the owner of this account to allows him to connect to the website.");
+            pLBAWeb.Images.Add("images/LBAProprete_parametrages.png");
+
 
             Projects.Add(pLBAWeb);
             #endregion
 
             #region LBAPropreteAndroidApp
-            ProjectModel pLBAAndroid = new ProjectModel("LBA Proprete Android App", "",
+            ProjectModel pLBAAndroid = new ProjectModel("LBA Proprete Android App", "This is a Android application that I programmed for my father company, like the precedent project. He wanted his future employees to be able to declare the begin and the end of a mission on a mobile app.",
                 "Java, Kotlin", null, "https://github.com/abaivel/Mission2Clean", 1, 2022, "images/image_lba_proprete.png", TypeProjectEnum.WORK, TypeSoftwareEnum.ANDROID_APP);
+
+            pLBAAndroid.Paragraphes.Add("The application starts on a connexion page. Nothing is saved in a database, it's just to know who is declaring the mission. The informations entered on this page are saved with the API SharedPreferences.\n\n" +
+                "Once connected, the user arrives on a page with 3 big buttons, one to declare the beginning of a cleaning mission, one to declare its end and one to declare a missing cleaning product.\n" +
+                "When the user clicks on one of those buttons, a email is send to my father indicating the name of the employee and his location. To have access to his location, I had to deal with the phone autorization.");
+            pLBAAndroid.Images.Add(null);
+
+            pLBAAndroid.Paragraphes.Add(null);
+            pLBAAndroid.Images.Add("images/Mission2Clean.png");
 
             Projects.Add(pLBAAndroid);
             #endregion
 
             #region Jeunes64
-            ProjectModel pJeunes64 = new ProjectModel("Jeunes 6.4", "",
+            ProjectModel pJeunes64 = new ProjectModel("Jeunes 6.4", "This is a website to help young people to have references when searching for a job.",
                 "HTML, CSS, PHP", "http://www.baivel.com/jeunes64/page_accueil.html", "https://github.com/max91p/projet_Jeunes_6.4", 4, 2023, "images/image_jeunes64.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
 
             Projects.Add(pJeunes64);

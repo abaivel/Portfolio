@@ -34,7 +34,7 @@
 		</MudText>
 		@for (var i=0;i<Project.Paragraphes.Count;i++){
 			var index = i;
-			@if (Project.Images[index] != null){
+			@if (Project.Images[index] != null && Project.Paragraphes[index] != null){
 				countParagraphe++;
 				@if (countParagraphe % 2 == 0)
 				{
@@ -60,10 +60,17 @@
 						</MudItem>
 					</MudItem>
 				}
-			}else{
+			}
+			else if (Project.Paragraphes[index] != null)
+			{
 				<MudText Typo="Typo.body1" Align="Align.Justify" Class="text-project-without-image">
 					@((MarkupString)Regex.Replace(HttpUtility.HtmlEncode(Project.Paragraphes[index]), "\r?\n|\r", "<br />"))
 				</MudText>
+			}
+			else if (Project.Images[index] != null){
+				<MudItem Class="text-project-without-image">
+					<MudImage Fluid="true" Src="@(Project.Images[index])" />
+				</MudItem>
 			}
 		}
 	</MudItem>

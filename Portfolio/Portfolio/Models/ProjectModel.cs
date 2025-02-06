@@ -8,7 +8,7 @@ namespace Portfolio.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Introduction { get; set; }
-        public List<string> Paragraphes { get; set; } = new List<string>();
+        public List<string?> Paragraphes { get; set; } = new List<string>();
         public List<string?> Images { get; set; } = new List<string?>();
         public string Language { get; set; }
         public string? Url { get; set; }

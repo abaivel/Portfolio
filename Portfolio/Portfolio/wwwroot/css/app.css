@@ -224,7 +224,7 @@ html, body, #app {
 
 .text-project-without-image {
     width: 95%;
-    margin: auto;
+    margin: auto !important;
 }
 /*endregion*/
 /*region contact page*/
