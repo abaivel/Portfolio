@@ -35,10 +35,14 @@
 						@*The application I program allows the users to create digital business cards. 
 						It is made for businnesses, the application allows them to control the digital cards of their employees.<br /><br />*@
 							I've been working on one specific project, a PWA (Progressive Web Application) to create digital business cards.
-							It is made for businnesses because the application allows them to control the digital cards of their employees.<br/><br/>
-						I've developped major features in this application and I can do the frontend as well as the backend.<br /><br />
-						Stacks: C#, Blazor, MudBlazor, ASP.NET Core, Entity Framework, OpenIddict, Hangfire
+							It is made for businesses because the application allows them to control the digital cards of their employees.<br/><br/>
+						I've developed major features in this application and I can do the front-end as well as the back-end.<br /><br />
+						We used these programming languages and frameworks for this project :
 					</MudText>
+					@foreach (string tech in LanguagesAndFrameworks)
+					{
+						<MudChip Variant="Variant.Outlined" T="string" Color="Color.Primary">@tech</MudChip>
+					}
 				</MudItem>
 			</MudItem>
 		</div>

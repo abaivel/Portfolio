@@ -9,6 +9,8 @@ namespace Portfolio.Pages
         [Inject] public IJSRuntime jSRuntime { get; set; } = default!;
         [CascadingParameter]
         public MainLayout Layout { get; set; }
+
+        public List<string> LanguagesAndFrameworks { get; set; } = new List<string>() { "C#", "Blazor", "MudBlazor", "ASP.NET Core", "Entity Framework", "OpenIddict", "Hangfire"};
         protected override void OnInitialized()
         {
             Layout.isHome = true;

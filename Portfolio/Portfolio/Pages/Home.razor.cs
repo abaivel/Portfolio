@@ -12,7 +12,7 @@ namespace Portfolio.Pages
         public MainLayout Layout { get; set; }
         public int Age { get; set; } = 21;
         public List<string> LanguagesAndFrameworks { get; set; } = new List<string>() { "Java", "JEE", "Servlets", "JSP", "JPA", "Android App Development", "Kotlin", "Python", "Django", "C#", "Blazor", "ASP.NET Core", "Entity Framework", "HTML", "CSS", "Javascript", "React.js", "PHP", "SQL" };
-        public List<string> Tools { get; set; } = new List<string>() { "Visual Studio", "Visual Studio Code", "IntelliJ", "Android Studio", "SQL Developer", "SQL Server", "MySQL Workbench", "PHPMyAdmin", "Github", "Windows", "Linux"};
+        public List<string> Tools { get; set; } = new List<string>() { "Visual Studio", "Visual Studio Code", "IntelliJ", "Android Studio", "SQL Developer", "SQL Server", "MySQL Workbench", "PHPMyAdmin", "Github", "Azure DevOps" , "Windows", "Linux"};
         protected override void OnInitialized()
         {
             Layout.isHome = true;
