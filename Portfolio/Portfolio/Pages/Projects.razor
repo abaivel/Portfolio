@@ -17,7 +17,7 @@
 			</MudItem>
 			<MudStack Row="true" Justify="Justify.SpaceEvenly" Wrap="Wrap.Wrap">
 					@foreach (var t in ListProjectsSearched){
-						<MudItem onclick="@(()=>OpenProject(t))">
+						<MudItem @onclick="@(()=>OpenProject(t))">
 						<ProjectContainer Project="t"></ProjectContainer>
 						</MudItem>
 					}

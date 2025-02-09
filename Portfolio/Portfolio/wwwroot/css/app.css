@@ -97,6 +97,32 @@ html, body, #app {
     outline: none !important;
 }
 
+.home-page-icon-down-arrow {
+    position: absolute !important;
+    bottom: 0;
+    left: 45%;
+    right: 45%;
+    width: 10% !important;
+    font-size: 3rem !important;
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
 .home-buttons {
     margin-top: 15px;
 }
@@ -231,11 +257,14 @@ html, body, #app {
 .white-frame-contact {
     margin-left: 20% !important;
     margin-right: 20% !important;
+    padding: 12px !important;
 }
 
 .g-recaptcha {
     margin: auto;
     height: 10vh;
+    margin-top: 8px;
+    margin-bottom: 4px;
 }
 /*endregion*/
 

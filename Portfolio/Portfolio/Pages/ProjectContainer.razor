@@ -15,7 +15,7 @@
 			<MudIcon Color="Color.Primary" Class="icon-project-container" Icon="@Icons.Material.Filled.Computer" Title="Computer App"></MudIcon>
 		}
 	</MudStack>
-	<MudItem Class="div-buttons-links-project">
+	<MudItem Class="div-buttons-links-project" @onclick:stopPropagation="true">
 		@if (Project.GithubUrl != null)
 		{
 			<MudButton Href="@Project.GithubUrl"

@@ -12,6 +12,7 @@ namespace Portfolio.Pages
     public partial class Contact
     {
         [Inject] public IJSRuntime jSRuntime { get; set; } = default!;
+        [Inject] public ISnackbar Snackbar { get; set; }
         [CascadingParameter]
         public MainLayout Layout { get; set; }
         bool success;
@@ -44,6 +45,7 @@ namespace Portfolio.Pages
                     email_destinataire = "abaivel+portfolio@outlook.fr",
                     email_object = "Contact via Portfolio - " + Email
                 });
+                Snackbar.Add("Email sent !", Severity.Success);
 
             }
 
