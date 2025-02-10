@@ -11,6 +11,7 @@ namespace Portfolio.Pages
         public MainLayout Layout { get; set; }
 
         public List<string> LanguagesAndFrameworks { get; set; } = new List<string>() { "C#", "Blazor", "MudBlazor", "ASP.NET Core", "Entity Framework", "OpenIddict", "Hangfire"};
+        public List<string> Tools { get; set; } = new List<string>() { "Visual Studio", "SQL Server", "Azure DevOps"};
         protected override void OnInitialized()
         {
             Layout.isHome = true;

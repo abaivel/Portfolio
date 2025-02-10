@@ -13,6 +13,7 @@ namespace Portfolio.Models
         public string Language { get; set; }
         public string? Url { get; set; }
         public string? GithubUrl { get; set; }
+        public string? FigmaUrl { get; set; }
         public int NbPeople { get; set; } = 1;
         public int Year { get; set; }
         public string? Logo {  get; set; }

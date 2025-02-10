@@ -36,5 +36,15 @@
 				Lien
 			</MudButton>
 		}
+		@if (Project.FigmaUrl != null){
+			<MudButton Href="@Project.FigmaUrl"
+					   Target="_blank"
+					   Variant="Variant.Filled"
+					   EndIcon="@iconFigma"
+					   Color="Color.Primary"
+					   Class="button-figma">
+				Figma
+			</MudButton>
+		}
 	</MudItem>
 </MudPaper>

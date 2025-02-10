@@ -43,6 +43,11 @@
 					{
 						<MudChip Variant="Variant.Outlined" T="string" Color="Color.Primary">@tech</MudChip>
 					}
+					<MudText Align="Align.Justify" Color="Color.Primary"><br />We used these tools during this project :</MudText>
+					@foreach (string tech in Tools)
+					{
+						<MudChip Variant="Variant.Outlined" T="string" Color="Color.Primary">@tech</MudChip>
+					}
 				</MudItem>
 			</MudItem>
 		</div>

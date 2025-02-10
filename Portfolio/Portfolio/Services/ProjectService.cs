@@ -49,11 +49,12 @@ namespace Portfolio.Services
             #region Hedgeshop
             ProjectModel pHedgeShop = new ProjectModel("HedgeShop", "This project is an e-commerce website. We had to choose the objects to sell and one of my teammate adores hedgehogs so we did a website to sell objects for hedgehogs.\n\n",
                 "Javascript, React.js, Python, Django", null, "https://github.com/UnderSkyle/ProjetWebING1", 3, 2024, "images/logo_hedgeshop.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
-
+            pHedgeShop.FigmaUrl = "https://www.figma.com/design/6SO6Ls87wV9MyICEIMrNNU/Dev-Web";
+            
             pHedgeShop.Paragraphes.Add("The website opens on a home page presenting the website. It looks like a typical e-commerce website, with a home page, product pages, a account page and a cart page. " +
                 "There are 3 kinds of product, \"Nourriture\" (\"Food\"), \"Cabane\" (\"Shed\"), \"Jouets\" (\"Toys\"). We also had to add a strange contact page. Those pages are also accessible from the footer, with the link to the social media of the website\n\n" +
                 "The two other buttons in the top right corner are to access the cart and to connect (or to access the profile).\n\n" +
-                "I did most of the frontend including the design of the logos and the color palette. I used the framework React.js to do the pages of the website and everything is responsive.");
+                "I did most of the frontend including the mock-up on Figma, the design of the logos and the color palette. I used the framework React.js to do the pages of the website and everything is responsive.");
             pHedgeShop.Images.Add("images/hedgeshop_home_page.png");
 
             pHedgeShop.Paragraphes.Add("Each product page looks like that. The list of products, their name, reference number, price and stock amounts are saved in a SQLite database. This database is managed with Django, a Python framework.\n\n" +

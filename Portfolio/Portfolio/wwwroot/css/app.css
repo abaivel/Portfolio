@@ -109,6 +109,10 @@ html, body, #app {
     animation: bounce 2s infinite;
 }
 
+.home-page-icon-down-arrow:hover {
+    cursor: pointer;
+}
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -251,6 +255,10 @@ html, body, #app {
 .text-project-without-image {
     width: 95%;
     margin: auto !important;
+}
+
+.button-figma svg{
+    font-size:24px !important;
 }
 /*endregion*/
 /*region contact page*/
