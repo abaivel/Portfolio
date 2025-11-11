@@ -9,11 +9,11 @@
 <div class="background-page">
 	<div class="filter-background-page">
 		<MudItem Class="div-title-page">
-                <MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Projects</MudText>
+                <MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Projets</MudText>
             </MudItem>
 		<div class="white-frame pa-3">
 			<MudItem class="mb-5">
-				<MudTextField Class="searchbar-projects" Immediate="true" Value="@ValueSearched" ValueChanged="@((string v) => ValueSearchedChanged(v))" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" HelperText="Enter a project name or a programming language" Variant="Variant.Outlined"></MudTextField>
+				<MudTextField Class="searchbar-projects" Immediate="true" Value="@ValueSearched" ValueChanged="@((string v) => ValueSearchedChanged(v))" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" HelperText="Entrer un nom de projet ou un langage de programmation" Variant="Variant.Outlined"></MudTextField>
 			</MudItem>
 			<MudStack Row="true" Justify="Justify.SpaceEvenly" Wrap="Wrap.Wrap">
 					@foreach (var t in ListProjectsSearched){
@@ -22,7 +22,7 @@
 						</MudItem>
 					}
 			</MudStack>
-			<MudText class="mt-6 mb-4" Align="Align.Center">This is just the beginning — more projects coming soon!</MudText>
+			<MudText class="mt-6 mb-4" Align="Align.Center">Plus de projets arrivent bientôt</MudText>
 		</div>
 		<br />
 	</div>

@@ -7,23 +7,25 @@
 	<br />
 	<MudGrid Justify="Justify.Center" Spacing="0" Class="div-infos-project">
 		<MudItem>
-			<MudIcon Icon="@Icons.Material.Filled.People" Title="Number of people who worked on the project"></MudIcon>
+			<MudIcon Icon="@Icons.Material.Filled.People" Title="Nombre de personnes qui ont travaillé sur le projet"></MudIcon>
 			<MudText>@Project.NbPeople</MudText>
 		</MudItem>
 		<MudItem>
-			<MudIcon Icon="@Icons.Material.Filled.CalendarToday" Title="Project's year'"></MudIcon>
+			<MudIcon Icon="@Icons.Material.Filled.CalendarToday" Title="Année du projet"></MudIcon>
 			<MudText>@Project.Year</MudText>
 		</MudItem>
 		<MudItem>
-			<MudIcon Icon="@Icons.Material.Filled.BusinessCenter" Title="Project's context'"></MudIcon>
+			<MudIcon Icon="@Icons.Material.Filled.BusinessCenter" Title="Contexte du projet"></MudIcon>
 			@if (Project.TypeProjectEnum == Enums.TypeProjectEnum.SCHOOL){
-				<MudText>School Project</MudText>
+				<MudText>Projet d'école</MudText>
 			}
 			else if (Project.TypeProjectEnum == Enums.TypeProjectEnum.PERSO)
 			{
-				<MudText>Personnal Project</MudText>
+				<MudText>Projet personnel</MudText>
+			}else if (Project.TypeProjectEnum == Enums.TypeProjectEnum.WORK){
+				<MudText>Projet professionnel</MudText>
 			}else{
-				<MudText>Professionnal Project</MudText>
+				<MudText>Projet Junior Entreprise</MudText>
 			}
 		</MudItem>
 	</MudGrid>

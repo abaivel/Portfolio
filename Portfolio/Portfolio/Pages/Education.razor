@@ -1,46 +1,52 @@
 ﻿@page "/education"
 @using MudBlazor
-<PageTitle>Baivel - Education</PageTitle>
+<PageTitle>Baivel - Éducation</PageTitle>
 
 <div class="background-page">
 	<div class="filter-background-page">
 		<MudItem Class="div-title-page">
-				<MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Education</MudText>
-			</MudItem>
-			<div class="white-frame">
-			<MudItem Class="div-text-left-image-right d-flex justify-space-evenly">
-					<MudItem Class="div-text">
-						<MudItem Class="pb-5">
-							<MudText Typo="Typo.h4" Color="Color.Primary">Master Degree In Computer Science</MudText>
-							<MudText Typo="Typo.h6" Color="Color.Primary">2021-2026</MudText>
-							</MudItem>
-						<MudText Align="Align.Justify" Color="Color.Primary">
-							I've been studying for 3 years and a half at the french engineering school, CY Tech, to get an engineering degree which is the equivalent of a master's degree. 
-							In this school, I've studied C, SQL, Java including JEE even a little bit of Python. 
-							I've also learned the basics of Linux, of network architecture and of code testing. <br />
-							During my classes, I did a few projects that you can find here:
-						</MudText>
-					<MudButton Color="Color.Secondary" Variant="Variant.Filled" Class="button-classic" Href="projects">My projects</MudButton>
-					</MudItem>
-				<MudItem Class="div-image">
-						<MudImage Fluid="true" Src="images/campuscytechcergy.jpg" />
-					</MudItem>
-				</MudItem>
-			<br />
-			<MudItem Class="div-text-right-image-left d-flex justify-space-evenly">
-					<MudItem Class="div-image">
-						<MudImage Fluid="true" Src="images/pexels-divinetechygirl-1181675.jpg" />
-					</MudItem>
-				<MudItem Class="div-text">
-						<MudText Align="Align.Justify" Color="Color.Primary">
-							In the context of my studies, I am in a program where I alternate between weeks of school and weeks of work. I've been in this program for a year and a half. 
-							<br />
-							I'm working as a software developer half of the time, you can find details about my work here:
-						</MudText>
-					<MudButton Color="Color.Secondary" Variant="Variant.Filled" Class="button-classic" Href="work">My work</MudButton>
-					</MudItem>
-				</MudItem>
-			</div>
-			<br />
+            <MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Éducation</MudText>
+		</MudItem>
+		<div class="white-frame">
+            <MudTimeline Class="mr-8 ml-8">
+                <MudTimelineItem Color="Color.Primary" Size="Size.Small">
+                    <ItemOpposite>
+                        <MudText Color="Color.Primary" Typo="Typo.h5">2023-2026</MudText>
+                    </ItemOpposite>
+                    <ItemContent>
+                        <MudText Color="Color.Primary" Typo="Typo.h6">Diplome d'ingénieur en informatique</MudText>
+                        <MudText Color="Color.Primary" GutterBottom="true">CY Tech - Cergy</MudText>
+                        <MudText>
+                            Apprentissage du SQL, Java dont les bases de JEE, React, Django ainsi que les bases de Linux, de l'architecture réseaux et des tests unitaires en Java avec JUnit.
+                            <br />
+                            Cycle ingénieur réalisé en alternance en tant que développeuse logiciel à Dupliprint.
+                        </MudText>
+                    </ItemContent>
+                </MudTimelineItem>
+                <MudTimelineItem Color="Color.Primary" Size="Size.Small">
+                    <ItemOpposite>
+                        <MudText Color="Color.Primary" Typo="Typo.h5">2021-2023</MudText>
+                    </ItemOpposite>
+                    <ItemContent>
+                        <MudText Color="Color.Primary" Typo="Typo.h6">Classe préparatoire intégrée</MudText>
+                        <MudText Color="Color.Primary" GutterBottom="true">CY Tech - Cergy</MudText>
+                        <MudText>Classe préparatoire intégrée de l'école d'ingénieur CY Tech (ex. EISTI). <br />
+                            Apprentissage du C, Script Shell et les bases du développement web en plus de cours de mathématiques et de physique.
+                        </MudText>
+                    </ItemContent>
+                </MudTimelineItem>
+                <MudTimelineItem Color="Color.Primary" Size="Size.Small">
+                    <ItemOpposite>
+                        <MudText Color="Color.Primary" Typo="Typo.h5">2018-2021</MudText>
+                    </ItemOpposite>
+                    <ItemContent>
+                        <MudText Color="Color.Primary" Typo="Typo.h6">Baccalauréat général <br />Spécialité Mathématiques, Physique-chimie, NSI</MudText>
+                        <MudText Color="Color.Primary" GutterBottom="true">Lycée Charles de Gaulle - Poissy</MudText>
+                        <MudText>Baccalauréat obtenu avec mention très bien avec les spécialités Mathématiques, Physique-Chimie et NSI ainsi que l'option Mathématiques Expertes</MudText>
+                    </ItemContent>
+                </MudTimelineItem>
+            </MudTimeline>
 		</div>
+		<br />
+	</div>
 </div>

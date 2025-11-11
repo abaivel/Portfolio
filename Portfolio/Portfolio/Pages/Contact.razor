@@ -6,15 +6,15 @@
 <div class="background-page">
 	<div class="filter-background-page">
 			<MudItem Class="div-title-page">
-				<MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Contact</MudText>
+				<MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Contactez-moi</MudText>
 			</MudItem>
 		<div class="white-frame white-frame-contact">
 				<MudForm @ref="form" @bind-IsValid="@success">
-					<MudTextField Variant="Variant.Outlined" @bind-Value="@Email" T="string" Label="Email" Required="true" RequiredError="Email is required!"
-								  Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})" />
+					<MudTextField Variant="Variant.Outlined" @bind-Value="@Email" T="string" Label="Email" Required="true" RequiredError="L'email obligatoire"
+								  Validation="@(new EmailAddressAttribute() {ErrorMessage = "L'adresse email est invalide"})" />
 					<MudTextField @bind-Value="@Message" T="string" Label="Message" Lines="10" Required="true" Variant="Variant.Outlined" />
 				<div class="g-recaptcha" data-sitekey="6LfY48AqAAAAAETDgfcHf5DHteyYVO0Ij8qedQF0"></div>
-					<MudButton Onclick="ValidateCaptcha" Variant="Variant.Filled" Color="Color.Primary" Disabled="@(Email.Count()==0 || Message.Count()==0)" Class="mx-auto mt-2">Send</MudButton>
+					<MudButton Onclick="ValidateCaptcha" Variant="Variant.Filled" Color="Color.Primary" Disabled="@(Email.Count()==0 || Message.Count()==0)" Class="mx-auto mt-2">Envoyer</MudButton>
 				</MudForm>
 			</div>
 			<script src="https://www.google.com/recaptcha/api.js" async defer></script>

@@ -1,57 +1,80 @@
 ﻿@page "/work"
 @using MudBlazor
 
-<PageTitle>Baivel - Work Experience</PageTitle>
+<PageTitle>Baivel - Expériences professionnelles</PageTitle>
 
 
 <div class="background-page">
 	<div class="filter-background-page">
 		<MudItem Class="div-title-page">
-			<MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Work Experience</MudText>
+			<MudText Typo="Typo.h3" Color="Color.Secondary" Align="Align.Center">Expériences professionnelles</MudText>
 		</MudItem>
 		<div class="white-frame">
-			<MudItem Class="div-text-left-image-right d-flex justify-space-evenly">
-				<MudItem Class="div-text">
-					<MudItem Class="pb-5">
-						<MudText Typo="Typo.h4" Color="Color.Primary">Software Developer</MudText>
-						<MudText Typo="Typo.h6" Color="Color.Primary">2023-2026</MudText>
-						</MudItem>
-					<MudText Align="Align.Justify" Color="Color.Primary">
-						In the context of my studies, I am in a program where I alternate between weeks of school and weeks of work.
-						So, half of the time, I work in a french printing and marketing company called DupliPrint where I program marketing websites with a team of developers.<br /><br />
-					</MudText>
-				</MudItem>
-				<MudItem Class="div-image">
-					<MudImage Fluid="true" Src="images/dupliprint.jpg" />
-				</MudItem>
-			</MudItem>
-			<br/>
-			<MudItem Class="div-text-right-image-left d-flex justify-space-evenly">
-				<MudItem Class="div-image">
-					<MudImage Fluid="true" Src="images/linkedcard4.png" />
-				</MudItem>
-				<MudItem Class="div-text">
-					<MudText Align="Align.Justify" Color="Color.Primary">
-						@*The application I program allows the users to create digital business cards. 
-						It is made for businnesses, the application allows them to control the digital cards of their employees.<br /><br />*@
-							I've been working on one specific project, a PWA (Progressive Web Application) to create digital business cards.
-							It is made for businesses because the application allows them to control the digital cards of their employees.<br/><br/>
-						I've developed major features in this application and I can do the front-end as well as the back-end.<br /><br />
-						We used these programming languages and frameworks for this project :
-					</MudText>
-					@foreach (string tech in LanguagesAndFrameworks)
-					{
-						<MudChip Variant="Variant.Outlined" T="string" Color="Color.Primary">@tech</MudChip>
-					}
-					<MudText Align="Align.Justify" Color="Color.Primary"><br />We used these tools during this project :</MudText>
-					@foreach (string tech in Tools)
-					{
-						<MudChip Variant="Variant.Outlined" T="string" Color="Color.Primary">@tech</MudChip>
-					}
-				</MudItem>
-			</MudItem>
+            <MudTimeline Class="mr-8 ml-8">
+                <MudTimelineItem Color="Color.Primary" Size="Size.Small">
+                    <ItemOpposite>
+                        <MudText Color="Color.Primary" Typo="Typo.h5">Octobre 2023 - Présent</MudText>
+                    </ItemOpposite>
+                    <ItemContent>
+                        <MudText Color="Color.Primary" Typo="Typo.h6">Développeuse logiciel en alternance</MudText>
+                        <MudText Color="Color.Primary" GutterBottom="true">Dupliprint - Domont</MudText>
+                        <MudText>
+                            Dupliprint est une entreprise d'imprimerie et de marketing et mes missions incluent :<br />
+                        </MudText>
+                         <MudText Class="work_list_mission">
+                            •	Développement et maintenance d'applications web, principalement LinkedCard, une application de cartes de visites digitales.
+                        </MudText>
+                        <MudText Class="work_list_mission">
+                            •	Implémentation de fonctionnalités frontend et backend
+                        </MudText>
+                        <MudText Class="work_list_mission">
+                            •	Utilisation des frameworks Blazor, ASP.NET Core, Entity Framework, Hangfire
+                        </MudText>
+                    </ItemContent>
+                </MudTimelineItem>
+                <MudTimelineItem Color="Color.Primary" Size="Size.Small">
+                    <ItemOpposite>
+                        <MudText Color="Color.Primary" Typo="Typo.h5">Juillet 2025 - Présent</MudText>
+                    </ItemOpposite>
+                    <ItemContent>
+                        <MudText Color="Color.Primary" Typo="Typo.h6">Chargée DSI</MudText>
+                        <MudText Color="Color.Primary" GutterBottom="true">CY Junior Engineering - Cergy</MudText>
+                        <MudText>
+                            CY Junior Engineering est la Junior Entreprise de mon école CY Tech, c'est-à-dire une association étudiante qui propose des prestations en informatique, en génie civil et en biotechnologies et chimie à diverses clients.
+                            Mes missions incluent : <br />
+                        </MudText>
+                        <MudText Class="work_list_mission">
+                            •	Gestion des dispositifs informatiques comprenant les sites web, le serveur et le VPS
+                        </MudText>
+                        <MudText Class="work_list_mission">
+                            •	Développement d’un site web de suivi de QR Codes en React et en Django
+                        </MudText>
+                        <MudText Class="work_list_mission">
+                            •	Refonte du site web vitrine et du site web de formations en Wordpress
+                        </MudText>
+                    </ItemContent>
+                </MudTimelineItem>
+                <MudTimelineItem Color="Color.Primary" Size="Size.Small">
+                    <ItemOpposite>
+                        <MudText Color="Color.Primary" Typo="Typo.h5">2018-2021</MudText>
+                    </ItemOpposite>
+                    <ItemContent>
+                        <MudText Color="Color.Primary" Typo="Typo.h6">Stagiaire en développement logiciel</MudText>
+                        <MudText Color="Color.Primary" GutterBottom="true">Ekwip - Rhode-Saint-Genèse, Belgique</MudText>
+                        <MudText>
+                            Ekwip est une entreprise de revente de produits invendus non alimentaires et les missions incluaient :<br />
+                            <MudText Class="work_list_mission">
+                                •	Développement d’une extension Chrome permettant d’automatiser la mise en ligne de produits sur la plateforme Vinted<br />
+                            </MudText>
+                            <MudText Class="work_list_mission">
+                                •	Développement de scripts en Python pour automatiser diverses tâches
+                            </MudText>
+                        </MudText>
+                    </ItemContent>
+                </MudTimelineItem>
+            </MudTimeline>
 		</div>
-			<br />
-		</div>
+		<br />
+	</div>
 </div>
 
