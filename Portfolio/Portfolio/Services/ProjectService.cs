@@ -9,18 +9,51 @@ namespace Portfolio.Services
         public static List<ProjectModel> Projects { get; set; } = new List<ProjectModel>();
         public static void createProjects()
         {
-            /*#region Site de formations de CYJE
-            Projects.Add(new ProjectModel("Site de formations de CYJE", "",
+            #region Site de formations de CYJE
+            Projects.Add(new ProjectModel("Site de formations de CYJE", "Le site de formations de CYJE, la Junior-Entreprise dont je faisais partie, est un site fait en Wordpress. " +
+                "Ce site, ainsi que le site vitrine de CYJE, devait être refait par un stagiaire pendant l'été 2025 mais les membres de l'association n'étant pas vraiment convaincu par la proposition du stagiare, j'ai dû réimaginé le site de formations avec l'aide d'un autre membre de l'association.",
                 "Wordpress", "https://www.formation.cyje.fr/", null, 2, 2025, "images/logo_cyje.png", TypeProjectEnum.JUNIOR_ENTREPRISE, TypeSoftwareEnum.WEBSITE));
             #endregion
             #region Site vitrine de CYJE
-            Projects.Add(new ProjectModel("Site vitrine de CYJE", "",
+            Projects.Add(new ProjectModel("Site vitrine de CYJE", "Le site vitrine de CYJE, la Junior-Entreprise dont je faisais partie, est un site fait en Wordpress. " +
+                "Ce site, ainsi que le site de formations de CYJE, devait être refait par un stagiaire pendant l'été 2025 mais les membres de l'association n'étant pas vraiment convaincu par la proposition du stagiare, j'ai dû réimaginé le site vitrine.",
                 "Wordpress", "https://www.cyje.fr/", null, 1, 2025, "images/logo_cyje.png", TypeProjectEnum.JUNIOR_ENTREPRISE, TypeSoftwareEnum.WEBSITE));
             #endregion
             #region CYJEQRCodes
-            Projects.Add(new ProjectModel("CYJEQRCodes", "",
-                "React, Django", "https://marketing.cyje.fr/", null, 1, 2025, "images/cyjeqrcode_accueil.png", TypeProjectEnum.JUNIOR_ENTREPRISE, TypeSoftwareEnum.WEBSITE));
-            #endregion*/
+            ProjectModel cyjeqrcodes = new ProjectModel("CYJEQRCodes", "CYJEQRCodes est un site de suivi de QR Codes que j'ai programmé pour la Junior Entreprise dont je faisais partie.",
+                "React, Django", "https://marketing.cyje.fr/", null, 1, 2025, "images/cyjeqrcodes_accueil.png", TypeProjectEnum.JUNIOR_ENTREPRISE, TypeSoftwareEnum.WEBSITE);
+            cyjeqrcodes.Paragraphes.Add("Le site web s'ouvre sur une page de connexion sur laquelle l'utilisateur peut entrer son adresse mail et son mot de passe ou alors se connecter avec son compte Google. " +
+                "A l'origine, la connexion grâce au compte Google n'était pas implémenté et pour pouvoir avec un compte, il fallait qu'un administrateur le créé. ");
+            cyjeqrcodes.Images.Add("images/cyjeqrcodes_accueil.png");
+
+            cyjeqrcodes.Paragraphes.Add("En effet, il y a trois types de comptes : \n" +
+                " - Utilisateur : Peut créer des QR Codes est voir les statistiques sur les visites de ses QR Codes.\n" +
+                " - Administrateur : Est un utilisateur qui peut créer des comptes pour d'autres utilisateurs.\n" +
+                " - SuperAdministrateur : Est un administrateur qui a accès au tableau de bord d'aministration de Django qui permet de voir tous les comptes et QR Codes crées.\n\n" +
+                "Grâce à la connexion Google, plus besoin qu'un administrateur crée un compte pour l'utilisateur, il suffit qu'il se connecte avec un compte Google ayant une adresse mail @cyje.fr." +
+                "Le type de compte de l'utilisateur est déterminé en fonction des groupes Google auxquels il appartient.");
+            cyjeqrcodes.Images.Add(null);
+
+            cyjeqrcodes.Paragraphes.Add("Une fois connecté, l'utilisateur arrive sur une page contenant ses QR Codes. Sur cette page, il peut créer un nouveau QR Code, chercher un QR Code, télécharger un QR Code et supprimer un QR Code." +
+                "Pour créer un QR Code, il faut entrer un nom, le lien vers lequel le QR Code doit rediriger et un type. " +
+                "Le type était une fonctionnalité demandé par le responsable communication car il voulait pouvoir tester le même QR Code sur des affiches différentes, à des endroits différents pour pouvoir comparer le nombre de visites. " +
+                "Le type sert donc à pouvoir différencier les QR Codes classiques des QR Codes pour les affiches.");
+            cyjeqrcodes.Images.Add("images/cyjeqrcodes_qrcodes.png");
+
+            cyjeqrcodes.Paragraphes.Add("En appuyant sur un QR Code, l'utilisateur peut voir les informations de celui-ci, le modifier, le supprimer, le télécharger (en choississant la couleur du QR Code) et il peut voir le nombre de visites ainsi que l'évolution dans le temps du nombre de visites.");
+            cyjeqrcodes.Images.Add("images/cyjeqrcodes_page_qrcode.png");
+
+            cyjeqrcodes.Paragraphes.Add("Les comptes Administrateurs et SuperAdministrateur ont accès à cette page, permettant de voir les comptes crées, de les modifier et de les supprimer. " +
+                "L'utilisateur peut aussi créer un compte pour un utilisateur en entrant un prénom, un nom, une adresse mail et en attribuant un role. " +
+                "Un email sera ensuite envoyé à l'utilisateur pour lui communiquer son mot de passe. " +
+                "Pour finir, il y a aussi une page pour que l'utilisateur modifie les informations de son compte comme son nom, son prénom et son mot de passe.");
+            cyjeqrcodes.Images.Add("images/cyjeqrcodes_users.png");
+
+
+            Projects.Add(cyjeqrcodes);
+
+
+            #endregion
 
             #region Portfolio
             Projects.Add(new ProjectModel("Portfolio", "Ce portfolio a été réalisé avec le framework Blazor qui est un framework ASP.NET Core qui permet d'utiliser du C# dans des fichiers HTML. " +
