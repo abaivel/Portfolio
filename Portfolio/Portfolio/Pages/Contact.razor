@@ -13,7 +13,7 @@
 					<MudTextField Variant="Variant.Outlined" @bind-Value="@Email" T="string" Label="Email" Required="true" RequiredError="L'email obligatoire"
 								  Validation="@(new EmailAddressAttribute() {ErrorMessage = "L'adresse email est invalide"})" />
 					<MudTextField @bind-Value="@Message" T="string" Label="Message" Lines="10" Required="true" Variant="Variant.Outlined" />
-				<div class="g-recaptcha" data-sitekey="6LfY48AqAAAAAETDgfcHf5DHteyYVO0Ij8qedQF0"></div>
+				<div class="g-recaptcha" data-sitekey="6LcF1awsAAAAAArkPkInz7lHF4tQNFS4fVXh3zgn"></div>
 					<MudButton Onclick="ValidateCaptcha" Variant="Variant.Filled" Color="Color.Primary" Disabled="@(Email.Count()==0 || Message.Count()==0)" Class="mx-auto mt-2">Envoyer</MudButton>
 				</MudForm>
 			</div>
