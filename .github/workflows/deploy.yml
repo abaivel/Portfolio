@@ -1,0 +1,36 @@
+name: Build & Deploy Blazor WASM
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Publish Blazor
+        run: dotnet publish -c Release -o publish
+
+      # Remplacement du base href
+      - name: Update base href
+        run: |
+          sed -i 's|<base href=".*" />|<base href="/portfolio-essai/" />|g' publish/wwwroot/index.html
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: publish/wwwroot/
+          server-dir: /home/user/www/portfolio-essai/
