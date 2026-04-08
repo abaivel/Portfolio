@@ -25,7 +25,7 @@ jobs:
       # Remplacement du base href
       - name: Update base href
         run: |
-          sed -i 's|<base href=".*" />|<base href="/portfolio-essai/" />|g' publish/wwwroot/index.html
+          sed -i 's|<base href=".*" />|<base href="/portfolio/" />|g' publish/wwwroot/index.html
         working-directory: Portfolio/Portfolio
         
       - name: Deploy via FTP
@@ -35,4 +35,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: Portfolio/Portfolio/publish/wwwroot/
-          server-dir: www/portfolio-essai/
+          server-dir: www/portfolio/
