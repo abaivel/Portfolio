@@ -20,6 +20,7 @@ jobs:
 
       - name: Publish Blazor
         run: dotnet publish -c Release -o publish
+        working-directory: Portfolio/Portfolio
 
       # Remplacement du base href
       - name: Update base href
