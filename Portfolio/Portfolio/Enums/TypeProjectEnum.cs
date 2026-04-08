@@ -4,6 +4,7 @@
     {
         SCHOOL,
         PERSO,
-        WORK
+        WORK,
+        JUNIOR_ENTREPRISE
     }
 }

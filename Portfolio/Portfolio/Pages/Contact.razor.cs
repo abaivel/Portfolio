@@ -45,7 +45,7 @@ namespace Portfolio.Pages
                     email_destinataire = "abaivel+portfolio@outlook.fr",
                     email_object = "Contact via Portfolio - " + Email
                 });
-                Snackbar.Add("Email sent !", Severity.Success);
+                Snackbar.Add("Email envoyé !", Severity.Success);
 
             }
 

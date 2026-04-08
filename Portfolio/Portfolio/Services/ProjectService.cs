@@ -9,124 +9,185 @@ namespace Portfolio.Services
         public static List<ProjectModel> Projects { get; set; } = new List<ProjectModel>();
         public static void createProjects()
         {
+            #region Site de formations de CYJE
+            Projects.Add(new ProjectModel("Site de formations de CYJE", "Le site de formations de CYJE, la Junior-Entreprise dont je faisais partie, est un site fait en Wordpress. " +
+                "Ce site, ainsi que le site vitrine de CYJE, devait être refait par un stagiaire pendant l'été 2025 mais les membres de l'association n'étant pas vraiment convaincu par la proposition du stagiare, j'ai dû réimaginé le site de formations avec l'aide d'un autre membre de l'association.",
+                "Wordpress", "https://www.formation.cyje.fr/", null, 2, 2025, "images/logo_cyje.png", TypeProjectEnum.JUNIOR_ENTREPRISE, TypeSoftwareEnum.WEBSITE));
+            #endregion
+            #region Site vitrine de CYJE
+            Projects.Add(new ProjectModel("Site vitrine de CYJE", "Le site vitrine de CYJE, la Junior-Entreprise dont je faisais partie, est un site fait en Wordpress. " +
+                "Ce site, ainsi que le site de formations de CYJE, devait être refait par un stagiaire pendant l'été 2025 mais les membres de l'association n'étant pas vraiment convaincu par la proposition du stagiare, j'ai dû réimaginé le site vitrine.",
+                "Wordpress", "https://www.cyje.fr/", null, 1, 2025, "images/logo_cyje.png", TypeProjectEnum.JUNIOR_ENTREPRISE, TypeSoftwareEnum.WEBSITE));
+            #endregion
+            #region CYJEQRCodes
+            ProjectModel cyjeqrcodes = new ProjectModel("CYJEQRCodes", "CYJEQRCodes est un site de suivi de QR Codes que j'ai programmé pour la Junior Entreprise dont je faisais partie.",
+                "React, Django", "https://marketing.cyje.fr/", null, 1, 2025, "images/cyjeqrcodes_accueil.png", TypeProjectEnum.JUNIOR_ENTREPRISE, TypeSoftwareEnum.WEBSITE);
+            cyjeqrcodes.Paragraphes.Add("Le site web s'ouvre sur une page de connexion sur laquelle l'utilisateur peut entrer son adresse mail et son mot de passe ou alors se connecter avec son compte Google. " +
+                "A l'origine, la connexion grâce au compte Google n'était pas implémenté et pour pouvoir avec un compte, il fallait qu'un administrateur le créé. ");
+            cyjeqrcodes.Images.Add("images/cyjeqrcodes_accueil.png");
+
+            cyjeqrcodes.Paragraphes.Add("En effet, il y a trois types de comptes : \n" +
+                " - Utilisateur : Peut créer des QR Codes est voir les statistiques sur les visites de ses QR Codes.\n" +
+                " - Administrateur : Est un utilisateur qui peut créer des comptes pour d'autres utilisateurs.\n" +
+                " - SuperAdministrateur : Est un administrateur qui a accès au tableau de bord d'aministration de Django qui permet de voir tous les comptes et QR Codes crées.\n\n" +
+                "Grâce à la connexion Google, plus besoin qu'un administrateur crée un compte pour l'utilisateur, il suffit qu'il se connecte avec un compte Google ayant une adresse mail @cyje.fr." +
+                "Le type de compte de l'utilisateur est déterminé en fonction des groupes Google auxquels il appartient.");
+            cyjeqrcodes.Images.Add(null);
+
+            cyjeqrcodes.Paragraphes.Add("Une fois connecté, l'utilisateur arrive sur une page contenant ses QR Codes. Sur cette page, il peut créer un nouveau QR Code, chercher un QR Code, télécharger un QR Code et supprimer un QR Code." +
+                "Pour créer un QR Code, il faut entrer un nom, le lien vers lequel le QR Code doit rediriger et un type. " +
+                "Le type était une fonctionnalité demandé par le responsable communication car il voulait pouvoir tester le même QR Code sur des affiches différentes, à des endroits différents pour pouvoir comparer le nombre de visites. " +
+                "Le type sert donc à pouvoir différencier les QR Codes classiques des QR Codes pour les affiches.");
+            cyjeqrcodes.Images.Add("images/cyjeqrcodes_qrcodes.png");
+
+            cyjeqrcodes.Paragraphes.Add("En appuyant sur un QR Code, l'utilisateur peut voir les informations de celui-ci, le modifier, le supprimer, le télécharger (en choississant la couleur du QR Code) et il peut voir le nombre de visites ainsi que l'évolution dans le temps du nombre de visites.");
+            cyjeqrcodes.Images.Add("images/cyjeqrcodes_page_qrcode.png");
+
+            cyjeqrcodes.Paragraphes.Add("Les comptes Administrateurs et SuperAdministrateur ont accès à cette page, permettant de voir les comptes crées, de les modifier et de les supprimer. " +
+                "L'utilisateur peut aussi créer un compte pour un utilisateur en entrant un prénom, un nom, une adresse mail et en attribuant un role. " +
+                "Un email sera ensuite envoyé à l'utilisateur pour lui communiquer son mot de passe. " +
+                "Pour finir, il y a aussi une page pour que l'utilisateur modifie les informations de son compte comme son nom, son prénom et son mot de passe.");
+            cyjeqrcodes.Images.Add("images/cyjeqrcodes_users.png");
+
+
+            Projects.Add(cyjeqrcodes);
+
+
+            #endregion
+
             #region Portfolio
-            Projects.Add(new ProjectModel("Portfolio", "My most recent project is this portfolio.\n\n" +
-                "It's made with the framework Blazor, an ASP.NET Core framework. That framework allows to integrate C# in HTML files. I also used the library MudBlazor which proposes ready-to-use components.", 
-                "Blazor", null, "https://github.com/abaivel/Portfolio", 1, 2025,"images/fond_portfolio.png", TypeProjectEnum.PERSO, TypeSoftwareEnum.WEBSITE));
+            Projects.Add(new ProjectModel("Portfolio", "Ce portfolio a été réalisé avec le framework Blazor qui est un framework ASP.NET Core qui permet d'utiliser du C# dans des fichiers HTML. " +
+                "J'ai aussi utilisé la bibliothèque MudBlazor qui propose des composants utilisables.",
+                "Blazor", null, "https://github.com/abaivel/Portfolio", 1, 2025, "images/fond_portfolio.png", TypeProjectEnum.PERSO, TypeSoftwareEnum.WEBSITE));
             #endregion
 
             #region 4XGame
-            ProjectModel p4XGame = new ProjectModel("4X Game", "This project is a 4X Game, which is a strategy game in which the users' actions can be summarized by the '4X', eXploration, eXpansion, eXploitation and eXtermination." +
-                "The purpose of this project was to program a simple game using JEE, with servlets, JSPs and JPA and by respecting a MVC architecture.",
+            ProjectModel p4XGame = new ProjectModel("4X Game", "Ce projet est un jeu 4X, c'est à dire un jeu de stratégie dans lequel les actions du joueur peuvent être résumées par les \"4X\", eXploration, eXpansion, eXploitation et eXtermination." +
+                "L'objectif de ce projet était de programmer un jeu simple en utilisateur JEE avec des servlets, les JSPs et JPA et en respectant l'architecture MVC.",
                 "Java, JEE, JPA, Servlet, JSP", null, "https://github.com/abaivel/Projet_JEE", 4, 2025, "images/fond_ecran_4xgame.jpeg", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
 
-            p4XGame.Paragraphes.Add("The website opens on a connexion page on which the user can enter their login and their password. The logins and passwords are saved in a database. " +
-                "The user can access the game either by entering an unused login or by entering the right login and password. " +
-                "Once they're in the game, they can start playing.");
+
+            p4XGame.Paragraphes.Add("Le site web s'ouvre sur une page de connexion sur laquelle l'utilisateur peut entrer son identifiant et son mot de passe. Les identifiants et les mots de passe sont sauvegardés dans une base de données." +
+                "L'utilisateur peut accéder le jeu soit en entrant un identifiant non utilisé, soit en entrant le bon identifiant et le bon mot de passe." +
+                "Une fois qu'il s'est connecté, le joueur peut commencer à jouer.");
             p4XGame.Images.Add("images/game4X_Connection_Page.png");
 
-            p4XGame.Paragraphes.Add("The game takes place on a 10x10 grid with different types of squares:\n" +
-                " - City: A player can own a city by winning a fight against it. Then it produces production points to the player, with which he can recruit new soldiers.\n" +
-                " - Mountain: The soldiers cannot go on these squares.\n" +
-                " - Forest: The soldiers can explore those squares to win production points.\n\n" +
-                "The player can do one action by soldier each turn. The possible actions are:\n" +
-                " - Move right, left, up or down\n" +
-                " - Explore the square if it's a forest\n" +
-                " - hHal himself\n" +
-                " - Do nothing\n");
+            p4XGame.Paragraphes.Add("Le jeu se déroule sur une grille 10x10 avec différents types de cases :\n" +
+                " - Ville: Un joueur peut posséder une ville en gagnant un combat contre elle. La ville produit ensuite des points de production au joueur avec lesquels il peut recruter de nouveaux soldats.\n" +
+                " - Montagne: Les soldats ne peuvent pas aller sur ces cases\n" +
+                " - Forêt: Les soldats peuvent explorer ces cases pour gagner des points de production\n\n" +
+                "Le joueur peut faire qu'une seule action par soldat par tour. Les actions possibles sont :\n" +
+                " - Se déclacer vers le haut, le bas, la droite et la gauche\n" +
+                " - Explorer la case si c'est une forêt\n" +
+                " - Se soigner\n" +
+                " - Ne rien faire\n");
             p4XGame.Images.Add("images/game4X_Game_Page.png");
 
-            p4XGame.Paragraphes.Add("If a soldier runs into a city or an enemy soldier, a fight starts. The fight works with random values. If a soldier loses all his life points, he dies and disappears from the grid. If a city loses all its points, the player now owns the city.");
+            p4XGame.Paragraphes.Add("Si un soldat croise une ville ou un ennemi, un combat commence." +
+                "Le combat fonctionne avec des valeurs aléatoires, rien n'est controllé par le joueur." +
+                "Si un soldat perd tous ses points de vie, il meurt et disparait de la grille." +
+                "Si une ville perd tous ses points de vie, le joueur possède maintenant la ville.\n");
             p4XGame.Images.Add("images/game4X_Fight_Page.png");
 
-            p4XGame.Paragraphes.Add("\nOnly a few information like the games dates, the players' login, password and past scores are saved in a database. " +
-                "The rest of the game information is saved directly on the server. To do that, we use the principle of the design pattern Singleton.");
+            p4XGame.Paragraphes.Add("Seulement les dates des parties, les identifiants, mots de passe et scores des joueurs sont sauvegardés dans une base de données." +
+                "Le reste des informations du jeu sont sauvegardés directement sur le serveur. Pour réaliser cela, nous avons utilisé le design pattern Singleton.");
             p4XGame.Images.Add(null);
 
             Projects.Add(p4XGame);
             #endregion
 
             #region Hedgeshop
-            ProjectModel pHedgeShop = new ProjectModel("HedgeShop", "This project is an e-commerce website. We had to choose the objects to sell and one of my teammate adores hedgehogs so we did a website to sell objects for hedgehogs.\n\n",
+
+            ProjectModel pHedgeShop = new ProjectModel("HedgeShop", "Ce projet est un site de e-commerce. Le choix des objets à vendre était libre et une de mes coéquipières adore les hérissons donc nous avons fait un site de vente d'objets pour hérisson.\n\n",
                 "Javascript, React.js, Python, Django", null, "https://github.com/UnderSkyle/ProjetWebING1", 3, 2024, "images/logo_hedgeshop.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WEBSITE);
             pHedgeShop.FigmaUrl = "https://www.figma.com/design/6SO6Ls87wV9MyICEIMrNNU/Dev-Web";
-            
-            pHedgeShop.Paragraphes.Add("The website opens on a home page presenting the website. It looks like a typical e-commerce website, with a home page, product pages, a account page and a cart page. " +
-                "There are 3 kinds of product, \"Nourriture\" (\"Food\"), \"Cabane\" (\"Shed\"), \"Jouets\" (\"Toys\"). We also had to add a strange contact page. Those pages are also accessible from the footer, with the link to the social media of the website\n\n" +
-                "The two other buttons in the top right corner are to access the cart and to connect (or to access the profile).\n\n" +
-                "I did most of the frontend including the mock-up on Figma, the design of the logos and the color palette. I used the framework React.js to do the pages of the website and everything is responsive.");
+
+            pHedgeShop.Paragraphes.Add("Le site web s'ouvre sur une page d'accueil présentant le site web. Ce site ressemble à un site classique d'e-commerce, avec une page d'accueil, des pages par catégories de produits, une page de profil et une page de panier."+
+                "Il y a trois types de produits, \"Nourriture\", \"Cabane\", \"Jouets\". Nous devions aussi ajouter une étrange page de contact. Toutes ces pages sont aussi accessibles depuis le footer, qui contient aussi les liens vers les réseaux sociaux du site web.\n\n" +
+                "Les deux autres boutons dans le coin à droite servent à accéder au panier et à se connecter (ou à accéder à la page de profil).\n\n" +
+                "J'ai réalisé une bonne partie du frontend dont la maquette sur Figma, le design des logos et la palette de couleurs. J'ai utilisé le frameword React pour réaliser les pages de ce site web and l'ensemble est responsive.");
             pHedgeShop.Images.Add("images/hedgeshop_home_page.png");
 
-            pHedgeShop.Paragraphes.Add("Each product page looks like that. The list of products, their name, reference number, price and stock amounts are saved in a SQLite database. This database is managed with Django, a Python framework.\n\n" +
-                "The user can click on the button to change the amount they want. If the amount is at least 1, the button to add to the cart appears. The user can see the amount of product left in stock by clicking on the button in the top right corner.");
+            pHedgeShop.Paragraphes.Add("Chaque page de produit ressemble à ça. La liste des produits, leur nom, numéro de référence, prix et stock sont sauvegardé dans une base de données SQLite. Cette base de données est géré par le framework Django.\n\n" +
+                "L'utilisateur peut cliquer sur le bouton pour changer la quantité qu'il veut. Si la quantité est au moins de 1, le bouton pour ajouter au panier apparait. L'utilisateur peut voir la quantité de produits restant en stock en cliquant sur le bouton dans le coin en haut à droite.");
             pHedgeShop.Images.Add("images/hedgeshop_products_page.png");
 
-            pHedgeShop.Paragraphes.Add("The user doesn't have to be connected to add products to the cart, but it's mandatory to place an order. The user information is saved in the database in the Django's user table to have a more secure connection process.\n\n" +
-                "Once the user is connected, he stays connected until he disconnects. In his profile, he can see his personal information, his shipping addresses and his past orders.");
+            pHedgeShop.Paragraphes.Add("L'utilisateur n'a pas besoin d'être connecté pour ajouter des produits au panier mais c'est obligatoire pour passer la commande. Les informations de l'utilisateur sont enregistrés dans la base de données dans la table User de Django pour avoir un processus de connexion sécurisé.\n\n" +
+                "Une fois l'utilisateur connecté, il reste connecté jusqu'à qu'il se déconnecte. Dans son profil, il peut voir ses informations, ses adresses de livraison et ses commandes.");
             pHedgeShop.Images.Add("images/hedgeshop_connection_page.png");
 
-            pHedgeShop.Paragraphes.Add("When the user adds a product to his cart, the number above the cart icon increases.\n\n" +
-                " In the cart page, the user can place an order by choosing a shipping address. As it's a simple school project, no payment process is implemented.");
+
+            pHedgeShop.Paragraphes.Add("Quand l'utilisateur ajoute un produit à son panier, le numéro au dessus de l'icone de caddie augmente.\n\n" +
+                "Dans la page du panier, l'utilisateur peut passer une commande en choissisant l'adresse de livraison. Comment c'est un projet d'école, aucun processus de paiement a été implémenté.");
             pHedgeShop.Images.Add("images/hedgeshop_cart_page.png");
 
             Projects.Add(pHedgeShop);
             #endregion
 
             #region Level1
-            ProjectModel pLevel1 = new ProjectModel("Level 1", "The purpose of that project was to program the first level of a video game in Java. " +
-                "In the game, the player can control a character (a penguin) in a world where he can fight monsters, interact with non-playable characters (NPC), find and use items.",
+            
+            ProjectModel pLevel1 = new ProjectModel("Level 1", "L'objectif de ce projet était de programmer le premier niveau d'un jeu vidéo en Java." +
+                "Dans le jeu, le joueur peut controler un personnage (un pinguin) dans un monde où il peut combattre des monstres, interagir avec des personnages non jouables (PNJ), trouver et utiliser des objets.",
                 "Java, JavaFX", null, "https://github.com/abaivel/projet_javafx", 2, 2024, "images/image_level1.png", TypeProjectEnum.SCHOOL, TypeSoftwareEnum.WINDOWS_APP);
-            pLevel1.Paragraphes.Add("The level is composed of three maps, accessible by different doors. The player can move his character (the penguin) with the keyboard arrows.\n" +
-                "There are different kinds of squares :\n" +
-                "- Grass (in green) : The character can move on it\n" +
-                "- River (in blue) : The character will die if he goes into it without a buoy\n" +
-                "- Wall (in brown) : The character cannot go on it\n" +
-                "- Hedge (in dark green) : The character cannot go on it but it can jump over it\n" +
-                "- Tree : The character cannot go on it");
+
+
+            pLevel1.Paragraphes.Add("Le niveau est composé de 3 mondes, accessibles par différentes portes. Le joueur peut déplacer son personnage (le pinguin) avec les flèches de son clavier.\n" +
+                "Il y a plusieurs types de cases\n" +
+                "- Herbe (en vert) : Le personnage peut se déplacer dessus\n" +
+                "- Rivière (en bleu) : Le personnage meurt si il va dessus sans bouée\n" +
+                "- Mur (en marron) : Le personnage ne peut pas aller dessus\n" +
+                "- Haie (en marron foncé) : Le personnage ne peut pas aller dessus mais peut sauter par dessus\n" +
+                "- Arbre : Le personnage ne peut pas aller dessus");
             pLevel1.Images.Add("images/level1_grille_game.png");
 
-            pLevel1.Paragraphes.Add("On the grid, the character can also find items like a buoy, a potion, a key (to open the door), a sword, etc..." +
-                "Once he finds one, he can save it in his inventory. He can also find money and life points.");
+            pLevel1.Paragraphes.Add("Sur la grille, le personnage peut trouver des objets comme une bouée, une potion, une clé (pour ouvrir les portes), une épée, etc..." +
+                "Quand il trouve un objet, celui-ci est sauvegardé dans son inventaire. Il peut aussi trouver de l'argent et les points de vie.");
             pLevel1.Images.Add(null);
 
-            pLevel1.Paragraphes.Add("On the grid, there are 3 kinds of monsters : Wolves, Slimes and Looters. " +
-                "If the character comes close to a monster, a combat starts. Both fighters can use potions, can dodge and can attack. Each kind of monster has its particular attack. For example, the slimes can poison the other fighter.\n\n" +
-                "The fight stops when one of the fighters dies. If it's the player's character, the game is over. If it's the monster, it drops its items before dying and the character can get them.");
+            pLevel1.Paragraphes.Add("Sur la grille, il y a 3 types de monstres : les loups, les slimes et les pilleurs." +
+                "Si le personnage se déplace proche d'un monstre, un combat commence. Les deux combattants peuvent utiliser des potions, esquiver et attaquer. Chaque type de monstre a une attaque particulière. Par exemple, les slimes peuvent empoisonner l'autre combattant.\n\n" +
+                "Le combat se termine lorsqu'un des combattants meurt. Si c'est le personnage du joueur, le jeu se termine. Si c'est le monstre, il lache ses objets sur la grillle avant de mourir et le personnage peut les récupérer.");
             pLevel1.Images.Add("images/level1_combat_page.png");
 
-            pLevel1.Paragraphes.Add("There is also the NPCs (Non-playable character). There are 3 kinds : Merchants, Fouras (it's a reference to a french TV show but it means a wizard who asks enigmas) and Useless Persons. " +
-                "The Useless Persons are indeed useless and just say random sentences. The Fouras ask enigmas and give money if the player answers correctly. The merchants can do more actions. " +
-                "Indeed, the player can:\n" +
-                " - Sell some of his items to the merchant\n" +
-                " - Buy some items from the merchant\n" +
-                " - Swap one of his items with one from the merchant");
+            pLevel1.Paragraphes.Add("Il y a aussi les personnages non jouables (PNJ). Il y a 3 types : Marchants, Fouras (comme le père Fouras) et les personnages inutiles." +
+                "Les personnages inutiles sont effectivement inutiles et ne font que dire des phrases aléatoires. Les Fouras posent des énigmes et donnent de l'argent au personnage si le joueur répond correctement. " +
+                "Les marchants peuvent faire plus d'actions. En effet, avec le marchant, le joueur peut :\n" +
+                " - vendre certains de ses objets au marchant\n" +
+                " - Acheter des objets du marchant\n" +
+                " - Echanger un de ses objets pour un des objets du marchant");
             pLevel1.Images.Add("images/level1_dialog_merchant.png");
 
             Projects.Add(pLevel1);
             #endregion
 
             #region LBAPropreteWebsite
-            ProjectModel pLBAWeb = new ProjectModel("LBA Proprete Website", "This is a website I programmed for my father's company. Indeed, my father has a cleaning company and he needed a website to manage his cleaning missions. He still isn't using it as he only has a few missions per week and doesn't have any employees.\n\n" +
-                "As it was one of my first websites, the code is pretty basic and use only HTML, CSS and PHP. I had to learn how to use OVH, Filezilla and PHPMyAdmin to be able to host this website.",
+
+            ProjectModel pLBAWeb = new ProjectModel("Site web LBA Proprete", "C'est un site web que j'ai programmé pour l'entreprise de mon père, une entreprise de nettoyage pour les professionnels. Il avait besoin d'un site web pour pouvoir gérer ses missions de nettoyage. \n\n" +
+                "Comme c'est un de mes premiers sites web, le code est assez basique et utilise seulement du HTML, CSS, Javascript et PHP. J'ai dû apprendre à utiliser OVH, Filezilla et PHPMyAdmin pour pouvoir héberger le site web.",
                 "HTML, CSS, PHP", "https://baivel.com/", null, 1, 2023, "images/image_lba_proprete.png", TypeProjectEnum.WORK, TypeSoftwareEnum.WEBSITE);
 
-            pLBAWeb.Paragraphes.Add("The website opens on a connection page. It's not possible to create an account from here, only the admin accounts can create accounts for other people.\n\n " +
-                "The logins and the encrypted passwords are saved in a database. The connection process is not very secure because I had no knowledge about security back then, but I am planning on redoing this website correctly in the future.");
+
+            pLBAWeb.Paragraphes.Add("Le site web ouvre sur une page de connexion. Il n'est pas possible de créer un compte depuis cette page, seulement des administrateurs peuvent créer des comptes pour d'autres personnes.\n\n" +
+                "Le nom d'utilisateur et le mot de passe chiffré sont stockés dans une base de données. Le processus de connexion n'est pas très sécurisé parce que mes connaissances à ce moment là étaient limités dans ce domaine mais une refactorisation de ce site est prévu prochainement.");
             pLBAWeb.Images.Add("images/LBAProprete_connexion.png");
 
-            pLBAWeb.Paragraphes.Add("The website has 5 main pages. Two of them, \"Collaborateurs\" (\"Collaborators\") and \"Missions\", have the same purpose, which is showing the missions. The difference is the sorting. " +
-                "On the collaborators page, the list is sorted by collaborators and on the missions page, the list is sorted by missions (not very visible on the image as I have only 1 mission and 1 collaborator). On both pages, the user can filter the list by date and by collaborator/address (depending on the page).");
+            pLBAWeb.Paragraphes.Add("Le site web a 5 pages principales. 2 d'entre elles \"Collaborateurs\" et \"Missions\" ont le même objectif, celui de montrer les missions. La différence est la façon dont les missions sont triées." +
+                "Sur la page \"Collaborateurs\", la liste est trié par collaborateur alors que sur la page \"Missions\", la liste est trié par mission (ce n'est pas très visible sur l'image comme il n'y a qu'une seule mission et un seul collaborateur). Sur les deux pages, l'utilisateur peut filtrer la liste par date et par collaborateur/adresse (selon la page).");
             pLBAWeb.Images.Add("images/LBAProprete_collaborateurs.png");
 
-            pLBAWeb.Paragraphes.Add("On both those pages, a part of the tables are empty. Indeed, it's supposed to be filled with the data from a mobile app similar to the one I already did. That mobile app would fill the table with the time and place of the employees when they start the mission. That application is not programmed yet, but it's one of my future project.");
+            pLBAWeb.Paragraphes.Add("Sur les deux pages, une partie du tableau est vide. En effet, cette partie est censé est remplie avec les données d'une application mobile similaire à celle que j'ai déjà faite. L'application remplirai le tableau avec l'heure et la localisation de l'employé quand il commence la mission. Cette application n'a pas encore été programmé mais c'est un de mes futurs projets.");
             pLBAWeb.Images.Add(null);
 
-            pLBAWeb.Paragraphes.Add("The page \"Affectations\" is made to create the missions. To add one, the user chooses an address, a day of the week, a start time, an end time of the missions. The user also chooses the start date and the end date of the contract with this client. To finish, the user chooses the collaborator who is going to do those missions.\n\n" +
-                "Once the affectation is created, the missions are generated automatically and are visible on the collaborators and missions pages. The end date of an affection can be modified and the list of missions will also be updated.\n\n" +
-                "The user can also filter the affectations by collaborator and by address.");
+            pLBAWeb.Paragraphes.Add("La page \"Affectations\" sert à créer les missions. Pour en ajouter une, l'utilisateur choisit l'adresse, un jour de la semaine, une heure de début et une heure de fin des missions. L'utilisateur peut aussi choisir la date de début et de fin du contrat avec le client. Pour finir, l'utilisateur peut choisir le collaborateur qui va réaliser ces missions.\n\n" +
+                "Une fois l'affectation créée, les missions sont généré automatiquement et sont visibles dans les pages \"Collaborateurs\" et \"Missions\". La date de fin de l'affectation peut être modifié et la liste des missions sera mise à jour.\n\n" +
+                "L'utilisateur peut aussi filtrer les affectations par collaborateur et par adresse.");
             pLBAWeb.Images.Add("images/LBAProprete_affectations.png");
 
-            pLBAWeb.Paragraphes.Add("The page \"Paramètrages\" (\"Settings\") allows the users to manage their collaborators and their addresses. The admin accounts can also manage the manager's accounts from this page. We decided to implement that idea of manager's accounts with the idea of a bigger company, with not only one person managing the employees. When a user creates a manager's account, he receives a email with the generated password for that account. The user can send it to the owner of this account to allow him to connect to the website.");
+            pLBAWeb.Paragraphes.Add("La page \"Paramètrages\" permet à l'utilisateur de gérer ses collaborateurs et ses adresses." +
+                "L'administrateur peut aussi gérer les comptes des managers depuis cette page." +
+                "Nous avons décidé d'implémenter cette idée des comptes manager avec l'idée en tête que le site web pourrait être utilisé par une grosse entreprise, avec plus d'une personne gérant des employés." +
+                "Quand l'utilisateur crée un compte manager, il reçoit un email avec le mot de passe généré pour le compte créé." +
+                "L'utilisateur peut ensuite l'envoyer au propriétaire du compte créé pour qu'il puisse se connecter au site web.");
             pLBAWeb.Images.Add("images/LBAProprete_parametrages.png");
 
 
@@ -134,13 +195,15 @@ namespace Portfolio.Services
             #endregion
 
             #region LBAPropreteAndroidApp
-            ProjectModel pLBAAndroid = new ProjectModel("LBA Proprete Android App", "This is a Android application that I programmed for my father's company, like the preceding project. He wanted his future employees to be able to declare the beginning and the end of a mission on a mobile app.",
+            ProjectModel pLBAAndroid = new ProjectModel("Application Android LBA Proprete", "Ceci est une application Android que j'ai programmé pour l'entreprise de mon père. Il voulait que ces futurs employés soient capables de déclarer le début et la fin de leur mission sur une application mobile.",
                 "Java, Kotlin", null, "https://github.com/abaivel/Mission2Clean", 1, 2022, "images/image_lba_proprete.png", TypeProjectEnum.WORK, TypeSoftwareEnum.ANDROID_APP);
 
-            pLBAAndroid.Paragraphes.Add("The application starts on a connexion page. Nothing is saved in a database, it's just to know who is declaring the mission. The information entered on this page is saved with the API SharedPreferences.\n\n" +
-                "Once connected, the user arrives on a page with 3 big buttons, one to declare the beginning of a cleaning mission, one to declare its end and one to declare a missing cleaning product.\n" +
-                "When the user clicks on one of those buttons, an email is sent to my father indicating the name of the employee and his location. To have access to his location, I had to deal with the phone authorization.");
+            pLBAAndroid.Paragraphes.Add("L'application commence avec une page de connexion. Rien n'est enregistré dans une base de données, c'est juste pour savoir qui déclare la mission. Les informations entrées sur cette page sont enregistrées avec l'API SharedPreferences.\n\n" +
+                "Une fois connecté, l'utilisateur arrive sur une page avec 3 boutons, un pour déclarer le début de la mission de nettoyage, un pour déclarer la fin de la mission et un pour déclarer le manque d'un produit de nettoyage.\n" +
+                "Quand l'utilisateur clique sur un des boutons, un email est envoyé à mon père indiquant le nom de l'employé and sa localisation. Pour avoir accès à se localisation, j'ai dû gérer les autorisations du téléphone.");
             pLBAAndroid.Images.Add(null);
+
+
 
             pLBAAndroid.Paragraphes.Add(null);
             pLBAAndroid.Images.Add("images/Mission2Clean.png");

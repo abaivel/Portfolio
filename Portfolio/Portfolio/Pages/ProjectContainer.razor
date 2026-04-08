@@ -1,5 +1,5 @@
 ﻿@using MudBlazor
-<MudPaper Elevation="5" Class="project-container px-5 py-3" Style=@("background-image: url('"+Project.Logo+"');")>
+<MudPaper Elevation="5" Class="project-container px-5 py-3" Style=@("background-image: url('"+Project.Logo+"'); background-position: center;")>
 	<MudStack Justify="Justify.SpaceBetween" Row="true">
 		<MudItem Class="width-fit-content">
 			<MudText Class="width-fit-content" Typo="Typo.h4">@Project.Name</MudText>
@@ -7,12 +7,12 @@
 		</MudItem>
 		@if (Project.TypeSoftwareEnum == Enums.TypeSoftwareEnum.WEBSITE)
 		{
-			<MudIcon Color="Color.Primary" Class="icon-project-container" Icon="@Icons.Material.Filled.Language" Title="Website"></MudIcon>
+			<MudIcon Color="Color.Primary" Class="icon-project-container" Icon="@Icons.Material.Filled.Language" Title="Site Web"></MudIcon>
 		}
 		else if (Project.TypeSoftwareEnum == Enums.TypeSoftwareEnum.ANDROID_APP){
-			<MudIcon Color="Color.Primary" Class="icon-project-container" Icon="@Icons.Material.Filled.PhoneAndroid" Title="Android App"></MudIcon>
+			<MudIcon Color="Color.Primary" Class="icon-project-container" Icon="@Icons.Material.Filled.PhoneAndroid" Title="Application Android"></MudIcon>
 		}else{
-			<MudIcon Color="Color.Primary" Class="icon-project-container" Icon="@Icons.Material.Filled.Computer" Title="Computer App"></MudIcon>
+			<MudIcon Color="Color.Primary" Class="icon-project-container" Icon="@Icons.Material.Filled.Computer" Title="Logiciel d'ordinateur"></MudIcon>
 		}
 	</MudStack>
 	<MudItem Class="div-buttons-links-project" @onclick:stopPropagation="true">
