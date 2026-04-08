@@ -26,12 +26,13 @@ jobs:
       - name: Update base href
         run: |
           sed -i 's|<base href=".*" />|<base href="/portfolio-essai/" />|g' publish/wwwroot/index.html
-
+        working-directory: Portfolio/Portfolio
+        
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: publish/wwwroot/
+          local-dir: Portfolio/Portfolio/publish/wwwroot/
           server-dir: /home/user/www/portfolio-essai/
