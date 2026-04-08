@@ -35,4 +35,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: Portfolio/Portfolio/publish/wwwroot/
-          server-dir: /home/baivel/www/portfolio-essai/
+          server-dir: www/portfolio-essai/
